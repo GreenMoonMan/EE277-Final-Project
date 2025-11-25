@@ -1,0 +1,104 @@
+/************************************************************************/
+/*                                                                      */
+/*  camera_demo.h   --   Pcam-5C HDMI-Out Camera Demonstration          */
+/*                                                                      */
+/************************************************************************/
+/*  Author:  <your name>                                                */
+/*  Date:    2025                                                      */
+/*                                                                      */
+/*  Description:                                                        */
+/*      Header file for the PCam-5C + HDMI-out pipeline demo.           */
+/*      Declares hardware IDs, initialization helpers, and mode         */
+/*      functions (camera and filters).                                 */
+/*                                                                      */
+/************************************************************************/
+
+#ifndef CAMERA_DEMO_H_
+#define CAMERA_DEMO_H_
+
+/* ------------------------------------------------------------ */
+/*                Include File Definitions                      */
+/* ------------------------------------------------------------ */
+
+#include "xparameters.h"
+#include "platform/platform.h"
+
+#include "ov5640/OV5640.h"
+#include "ov5640/ScuGicInterruptController.h"
+#include "ov5640/PS_GPIO.h"
+#include "ov5640/AXI_VDMA.h"
+#include "ov5640/PS_IIC.h"
+#include "hdmi/VideoOutput.h"
+
+#include "MIPI_D_PHY_RX.h"
+#include "MIPI_CSI_2_RX.h"
+
+#include "display_ctrl/display_ctrl.h"  // for DisplayStart/Stop/ChangeFrame
+
+
+/* ------------------------------------------------------------ */
+/*                  Hardware Device IDs                         */
+/* ------------------------------------------------------------ */
+
+#define IRPT_CTL_DEVID         XPAR_PS7_SCUGIC_0_DEVICE_ID
+#define GPIO_DEVID             XPAR_PS7_GPIO_0_DEVICE_ID
+#define GPIO_IRPT_ID           XPAR_PS7_GPIO_0_INTR
+#define CAM_I2C_DEVID          XPAR_PS7_I2C_0_DEVICE_ID
+#define CAM_I2C_IRPT_ID        XPAR_PS7_I2C_0_INTR
+#define VDMA_DEVID             XPAR_AXIVDMA_0_DEVICE_ID
+#define VDMA_MM2S_IRPT_ID      XPAR_FABRIC_AXI_VDMA_0_MM2S_INTROUT_INTR
+#define VDMA_S2MM_IRPT_ID      XPAR_FABRIC_AXI_VDMA_0_S2MM_INTROUT_INTR
+#define CAM_I2C_SCLK_RATE      100000
+
+#define DDR_BASE_ADDR          XPAR_DDR_MEM_BASEADDR
+#define MEM_BASE_ADDR          (DDR_BASE_ADDR + 0x0A000000)
+
+#define GAMMA_BASE_ADDR        XPAR_AXI_GAMMACORRECTION_1_BASEADDR
+
+#define SNAPSHOT_DDR_OFFSET   0x03000000U      // 48 MB after base
+#define SNAPSHOT_ADDR         (MEM_BASE_ADDR + SNAPSHOT_DDR_OFFSET)
+
+using namespace digilent;
+
+/* ------------------------------------------------------------ */
+/*                 Function Declarations                         */
+/* ------------------------------------------------------------ */
+
+/**
+ * @brief Bring up or reconfigure the complete MIPI → VDMA → HDMI pipeline.
+ */
+void pipeline_mode_change(
+    AXI_VDMA<ScuGicInterruptController>& vdma_driver,
+    OV5640& cam,
+    VideoOutput& vid,
+    Resolution res,
+    OV5640_cfg::mode_t mode);
+
+/**
+ * @brief Interactive camera configuration menu.
+ */
+void run_camera_mode(
+    AXI_VDMA<ScuGicInterruptController>& vdma,
+    OV5640& cam,
+    VideoOutput& vid);
+
+/**
+ * @brief Placeholder for future software filter menu.
+ *        Currently empty to allow clean linking.
+ */
+inline void run_filters_mode(
+    AXI_VDMA<ScuGicInterruptController>&,
+    OV5640&,
+    VideoOutput&) { /* intentionally left blank */ }
+
+
+/**
+ * @brief Snapshot mode — capture one frame from DDR and display it.
+ */
+void run_snapshot_mode(
+    AXI_VDMA<digilent::ScuGicInterruptController>& vdma,
+    digilent::OV5640& cam,
+    digilent::VideoOutput& vid);
+
+
+#endif /* CAMERA_DEMO_H_ */

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="FileSystemImportWizard">
+		<item key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID" value="false"/>
+		<item key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID" value="false"/>
+		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="Z:\EE_277\lab9\lab9_vit\Zybo-Z7-10-HDMI\src\dynclk"/>
+			<item value="Z:\EE_277\lab9\lab9_vit\Zybo-Z7-10-HDMI\src\video_capture"/>
+			<item value="Z:\EE_277\lab9\lab9_vit\Zybo-Z7-10-HDMI\src\timer_ps"/>
+			<item value="Z:\EE_277\lab9\lab9_vit\Zybo-Z7-10-HDMI\src\intc"/>
+			<item value="Z:\EE_277\lab9\lab9_vit\Zybo-Z7-10-HDMI\src\display_ctrl"/>
+		</list>
+	</section>
+</section>
