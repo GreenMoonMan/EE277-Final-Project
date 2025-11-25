@@ -1,0 +1,26 @@
+verilog xil_defaultlib --include "C:/Xilinx/Vivado/2023.1/data/xilinx_vip/include" --include "../../../../hw.gen/sources_1/bd/system/ip/system_MIPI_CSI_2_RX_0_0/hdl/line_buffer/hdl" --include "../../../../hw.gen/sources_1/bd/system/ip/system_MIPI_CSI_2_RX_0_0/hdl/ila_vidclk/hdl/verilog" --include "../../../../hw.gen/sources_1/bd/system/ip/system_MIPI_CSI_2_RX_0_0/hdl/ila_rxclk_lane/hdl/verilog" --include "../../../../hw.gen/sources_1/bd/system/ip/system_MIPI_CSI_2_RX_0_0/hdl/ila_rxclk/hdl/verilog" --include "../../../../hw.gen/sources_1/bd/system/ip/system_MIPI_D_PHY_RX_0_0/hdl/ila_scnn_refclk/hdl/verilog" --include "../../../../hw.gen/sources_1/bd/system/ip/system_MIPI_D_PHY_RX_0_0/hdl/ila_sfen_refclk/hdl/verilog" --include "../../../../hw.gen/sources_1/bd/system/ip/system_MIPI_D_PHY_RX_0_0/hdl/ila_sfen_rxclk/hdl/verilog" --include "../../../../hw.gen/sources_1/bd/system/ipshared/ec67/hdl" --include "../../../../hw.gen/sources_1/bd/system/ipshared/aed8/hdl" --include "../../../../hw.gen/sources_1/bd/system/ipshared/0691/hdl" --include "../../../../hw.gen/sources_1/bd/system/ipshared/30ef" \
+"../../../bd/system/ip/system_MIPI_CSI_2_RX_0_0/hdl/cdc_fifo/sim/cdc_fifo.v" \
+"../../../bd/system/ip/system_MIPI_CSI_2_RX_0_0/hdl/line_buffer/sim/line_buffer.v" \
+"../../../bd/system/ip/system_processing_system7_0_0/sim/system_processing_system7_0_0.v" \
+"../../../bd/system/ip/system_xlconcat_0_0/sim/system_xlconcat_0_0.v" \
+"../../../bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0_clk_wiz.v" \
+"../../../bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.v" \
+"../../../bd/system/ip/system_xbar_0/sim/system_xbar_0.v" \
+"../../../bd/system/ip/system_v_axi4s_vid_out_0_0/sim/system_v_axi4s_vid_out_0_0.v" \
+"../../../bd/system/ip/system_video_dynclk_0/system_video_dynclk_0_mmcm_pll_drp.v" \
+"../../../bd/system/ip/system_video_dynclk_0/system_video_dynclk_0_clk_wiz.v" \
+"../../../bd/system/ip/system_video_dynclk_0/system_video_dynclk_0.v" \
+"../../../bd/system/ipshared/cf93/src/edge_kernel.v" \
+"../../../bd/system/ipshared/cf93/src/intensity_kernel.v" \
+"../../../bd/system/ipshared/cf93/src/stencil_buf.v" \
+"../../../bd/system/ipshared/cf93/src/edge_detect_hw.v" \
+"../../../bd/system/ip/system_edge_detect_hw_0_0/sim/system_edge_detect_hw_0_0.v" \
+"../../../bd/system/ip/system_xlconstant_0_0/sim/system_xlconstant_0_0.v" \
+"../../../bd/system/ip/system_auto_pc_0/sim/system_auto_pc_0.v" \
+"../../../bd/system/ip/system_auto_pc_1/sim/system_auto_pc_1.v" \
+"../../../bd/system/ip/system_auto_pc_2/sim/system_auto_pc_2.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

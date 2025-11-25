@@ -1,0 +1,160 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Mon Nov 24 21:13:52 2025
+# Process ID: 5944
+# Current directory: C:/Users/0678c/AppData/Roaming/Xilinx/Vivado
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17980
+# Log file: C:/Users/0678c/AppData/Roaming/Xilinx/Vivado/vivado.log
+# Journal file: C:/Users/0678c/AppData/Roaming/Xilinx/Vivado\vivado.jou
+# Running On: MSI, OS: Windows, CPU Frequency: 2995 MHz, CPU Physical cores: 14, Host memory: 34045 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/0678c/Documents/EE_277/course_project/EE277-Final-Project-BaronE/final_proj/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.xpr
+update_compile_order -fileset sources_1
+update_module_reference system_DVIClocking_1_0
+set_property  ip_repo_paths  c:/Users/0678c/Documents/EE_277/course_project/EE277-Final-Project-BaronE/final_proj/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.ipdefs/repo [current_project]
+update_ip_catalog
+set_property  ip_repo_paths  {c:/Users/0678c/Documents/EE_277/course_project/EE277-Final-Project-BaronE/final_proj/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.ipdefs/repo C:/Users/0678c/Documents/EE_277/course_project/EE277-Final-Project-BaronE/final_proj/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.ip_user_files/ip/edge_detect_hw_0} [current_project]
+update_ip_catalog
+write_bd_layout -format pdf -orientation portrait C:/Users/0678c/Documents/EE_277/course_project/EE277-Final-Project-BaronE/final_proj/Zybo-Z7-10-Pcam-5C-hw.xpr/system.pdf
+delete_bd_objs [get_bd_nets hwsw_sel_0_1] [get_bd_intf_nets edge_detect_hw_0_m_axis] [get_bd_intf_nets AXI_GammaCorrection_1_m_axis_video] [get_bd_cells edge_detect_hw_0]
+export_ip_user_files -of_objects  [get_files C:/Users/0678c/Documents/EE_277/course_project/EE277-Final-Project-BaronE/final_proj/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.srcs/sources_1/ip/edge_detect_hw_0/edge_detect_hw_0.xci] -no_script -reset -force -quiet
+remove_files  -fileset edge_detect_hw_0 C:/Users/0678c/Documents/EE_277/course_project/EE277-Final-Project-BaronE/final_proj/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.srcs/sources_1/ip/edge_detect_hw_0/edge_detect_hw_0.xci
+save_bd_design
+close_bd_design [get_bd_designs system]
+open_bd_design {C:/Users/0678c/Documents/EE_277/course_project/EE277-Final-Project-BaronE/final_proj/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.srcs/sources_1/bd/system/system.bd}
+open_project C:/Users/0678c/Documents/EE_277/Lab9/Lab9/Zybo-Z7-10-HDMI-hw.xpr/Zybo-Z7-10-HDMI-hw.xpr/hw/hw.xpr
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/0678c/Documents/EE_277/Lab9/Lab9/Zybo-Z7-10-HDMI-hw.xpr/Zybo-Z7-10-HDMI-hw.xpr/hw/hw.srcs/sources_1/bd/design_1/design_1.bd}
+ipx::edit_ip_in_project -upgrade true -name edge_detect_hw_v1_0_project -directory C:/Users/0678c/Documents/EE_277/Lab9/Lab9/Zybo-Z7-10-HDMI-hw.xpr/Zybo-Z7-10-HDMI-hw.xpr/hw/hw.tmp/edge_detect_hw_v1_0_project c:/Users/0678c/Documents/EE_277/Lab9/Lab9/Zybo-Z7-10-HDMI-hw.xpr/Zybo-Z7-10-HDMI-hw.xpr/hw/hw.ipdefs/repo/vivado-library/ip/edge_detect_hw/component.xml
+update_compile_order -fileset sources_1
+current_project hw
+set_property  ip_repo_paths  {c:/Users/0678c/Documents/EE_277/course_project/EE277-Final-Project-BaronE/final_proj/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.ipdefs/repo c:/Users/0678c/Documents/EE_277/course_project/EE277-Final-Project-BaronE/final_proj/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.ip_user_files/ip/edge_detect_hw_0 C:/Users/0678c/Documents/EE_277/Lab9/Lab9/Zybo-Z7-10-HDMI-hw.xpr/Zybo-Z7-10-HDMI-hw.xpr/hw/hw.ipdefs} [current_project]
+update_ip_catalog
+startgroup
+create_bd_cell -type ip -vlnv Arm.com:user:edge_detect_hw:1.0 edge_detect_hw_0
+endgroup
+set_property location {8 2602 1220} [get_bd_cells edge_detect_hw_0]
+connect_bd_intf_net [get_bd_intf_pins AXI_GammaCorrection_1/m_axis_video] [get_bd_intf_pins edge_detect_hw_0/s_axis]
+current_project hw(2)
+current_project hw
+connect_bd_intf_net [get_bd_intf_pins edge_detect_hw_0/m_axis] [get_bd_intf_pins axi_vdma_0/S_AXIS_S2MM]
+set_property location {-138 1247} [get_bd_ports sw]
+connect_bd_net [get_bd_ports sw] [get_bd_pins edge_detect_hw_0/hwsw_sel]
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/clk_wiz_0/clk_out2 (150 MHz)} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins edge_detect_hw_0/clk]
+current_project hw(2)
+current_project hw
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {Auto}}  [get_bd_pins rst_clk_wiz_0_150M/ext_reset_in]
+delete_bd_objs [get_bd_nets rst_clk_wiz_0_150M_peripheral_aresetn] [get_bd_cells rst_clk_wiz_0_150M]
+regenerate_bd_layout
+validate_bd_design
+connect_bd_net [get_bd_pins rst_clk_wiz_0_50M/peripheral_aresetn] [get_bd_pins edge_detect_hw_0/rst_n]
+regenerate_bd_layout
+validate_bd_design
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 20
+wait_on_run impl_1
+current_project hw(2)
+close_project
+current_project hw
+current_project edge_detect_hw_v1_0_project
+current_project hw
+delete_bd_objs [get_bd_nets sw_1] [get_bd_ports sw]
+create_bd_port -dir I -from 0 -to 0 sw
+connect_bd_net [get_bd_ports sw] [get_bd_pins edge_detect_hw_0/hwsw_sel]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 20
+wait_on_run impl_1
+open_hw_manager
+write_hw_platform -fixed -include_bit -force -file C:/Users/0678c/Documents/EE_277/course_project/project_test_wrapper.xsa
+close_project
+close_project
+open_project C:/Users/0678c/Documents/EE_277/course_project/EE277-Final-Project-BaronE/final_proj/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.xpr
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/0678c/Documents/EE_277/course_project/EE277-Final-Project-BaronE/final_proj/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.srcs/sources_1/bd/system/system.bd}
+report_io
+open_run impl_1
+report_io
+close_design
+open_project C:/Users/0678c/Documents/EE_277/Lab9/Lab9/Zybo-Z7-10-HDMI-hw.xpr/Zybo-Z7-10-HDMI-hw.xpr/hw/hw.xpr
+update_compile_order -fileset sources_1
+open_run impl_1
+report_io
+close_project
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 20
+wait_on_run impl_1
+open_run impl_1
+reportio
+report_io
+open_bd_design {C:/Users/0678c/Documents/EE_277/course_project/EE277-Final-Project-BaronE/final_proj/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.srcs/sources_1/bd/system/system.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0
+endgroup
+set_property location {8 2425 1050} [get_bd_cells xlconstant_0]
+delete_bd_objs [get_bd_nets sw_1]
+connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins edge_detect_hw_0/hwsw_sel]
+save_bd_design
+delete_bd_objs [get_bd_ports sw]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 20
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/0678c/Documents/EE_277/course_project/test_vitis/project_wrapper.xsa
+ipx::edit_ip_in_project -upgrade true -name edge_detect_hw_v1_0_project -directory C:/Users/0678c/Documents/EE_277/course_project/EE277-Final-Project-BaronE/final_proj/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.tmp/edge_detect_hw_v1_0_project c:/Users/0678c/Documents/EE_277/Lab9/Lab9/Zybo-Z7-10-HDMI-hw.xpr/Zybo-Z7-10-HDMI-hw.xpr/hw/hw.ipdefs/repo/vivado-library/ip/edge_detect_hw/component.xml
+update_compile_order -fileset sources_1
+ipx::unload_core c:/Users/0678c/Documents/EE_277/Lab9/Lab9/Zybo-Z7-10-HDMI-hw.xpr/Zybo-Z7-10-HDMI-hw.xpr/hw/hw.ipdefs/repo/vivado-library/ip/edge_detect_hw/component.xml
+ipx::open_ipxact_file c:/Users/0678c/Documents/EE_277/Lab9/Lab9/Zybo-Z7-10-HDMI-hw.xpr/Zybo-Z7-10-HDMI-hw.xpr/hw/hw.ipdefs/repo/vivado-library/ip/edge_detect_hw/component.xml
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+set_property core_revision 5 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/Users/0678c/Documents/EE_277/Lab9/Lab9/Zybo-Z7-10-HDMI-hw.xpr/Zybo-Z7-10-HDMI-hw.xpr/hw/hw.ipdefs
+set_property core_revision 6 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/Users/0678c/Documents/EE_277/Lab9/Lab9/Zybo-Z7-10-HDMI-hw.xpr/Zybo-Z7-10-HDMI-hw.xpr/hw/hw.ipdefs
+close_project
+update_ip_catalog -rebuild -scan_changes
+report_ip_status -name ip_status
+upgrade_ip -vlnv Arm.com:user:edge_detect_hw:1.0 [get_ips  system_edge_detect_hw_0_0] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips system_edge_detect_hw_0_0] -no_script -sync -force -quiet
+generate_target all [get_files  C:/Users/0678c/Documents/EE_277/course_project/EE277-Final-Project-BaronE/final_proj/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.srcs/sources_1/bd/system/system.bd]
+catch { config_ip_cache -export [get_ips -all system_edge_detect_hw_0_0] }
+catch { config_ip_cache -export [get_ips -all system_auto_pc_0] }
+catch { config_ip_cache -export [get_ips -all system_auto_pc_1] }
+catch { config_ip_cache -export [get_ips -all system_auto_pc_2] }
+export_ip_user_files -of_objects [get_files C:/Users/0678c/Documents/EE_277/course_project/EE277-Final-Project-BaronE/final_proj/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.srcs/sources_1/bd/system/system.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/0678c/Documents/EE_277/course_project/EE277-Final-Project-BaronE/final_proj/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.srcs/sources_1/bd/system/system.bd]
+launch_runs system_edge_detect_hw_0_0_synth_1 -jobs 20
+wait_on_run system_edge_detect_hw_0_0_synth_1
+export_simulation -of_objects [get_files C:/Users/0678c/Documents/EE_277/course_project/EE277-Final-Project-BaronE/final_proj/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.srcs/sources_1/bd/system/system.bd] -directory C:/Users/0678c/Documents/EE_277/course_project/EE277-Final-Project-BaronE/final_proj/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/0678c/Documents/EE_277/course_project/EE277-Final-Project-BaronE/final_proj/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.ip_user_files -ipstatic_source_dir C:/Users/0678c/Documents/EE_277/course_project/EE277-Final-Project-BaronE/final_proj/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/0678c/Documents/EE_277/course_project/EE277-Final-Project-BaronE/final_proj/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.cache/compile_simlib/modelsim} {questa=C:/Users/0678c/Documents/EE_277/course_project/EE277-Final-Project-BaronE/final_proj/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.cache/compile_simlib/questa} {riviera=C:/Users/0678c/Documents/EE_277/course_project/EE277-Final-Project-BaronE/final_proj/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.cache/compile_simlib/riviera} {activehdl=C:/Users/0678c/Documents/EE_277/course_project/EE277-Final-Project-BaronE/final_proj/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+report_ip_status -name ip_status 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 20
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 20
+wait_on_run impl_1
+close_bd_design [get_bd_designs system]
+close_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 20
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 20
+wait_on_run impl_1
+open_run impl_1
+report_io
+close_design
+write_hw_platform -fixed -include_bit -force -file C:/Users/0678c/Documents/EE_277/course_project/test_vitis/project_test_wrapper.xsa
+archive_project C:/Users/0678c/Documents/EE_277/course_project/camera_filter_hardware.xpr.zip -temp_dir C:/Users/0678c/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-5944-MSI -force -include_local_ip_cache -include_config_settings

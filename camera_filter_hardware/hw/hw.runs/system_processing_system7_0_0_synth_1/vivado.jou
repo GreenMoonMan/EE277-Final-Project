@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Mon Jul 17 11:05:01 2023
+# Process ID: 21516
+# Current directory: C:/Temp/Zybo-Z7/hw/proj/hw.runs/system_processing_system7_0_0_synth_1
+# Command line: vivado.exe -log system_processing_system7_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_processing_system7_0_0.tcl
+# Log file: C:/Temp/Zybo-Z7/hw/proj/hw.runs/system_processing_system7_0_0_synth_1/system_processing_system7_0_0.vds
+# Journal file: C:/Temp/Zybo-Z7/hw/proj/hw.runs/system_processing_system7_0_0_synth_1\vivado.jou
+# Running On: bocos-ro, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 8, Host memory: 34065 MB
+#-----------------------------------------------------------
+source system_processing_system7_0_0.tcl -notrace
