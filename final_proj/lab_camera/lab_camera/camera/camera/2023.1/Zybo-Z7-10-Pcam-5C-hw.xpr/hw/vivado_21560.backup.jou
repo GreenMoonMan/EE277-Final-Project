@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Mon Jul 17 11:02:19 2023
+# Process ID: 21560
+# Current directory: C:/Users/rbocos/AppData/Roaming/Xilinx/Vivado
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12968
+# Log file: C:/Users/rbocos/AppData/Roaming/Xilinx/Vivado/vivado.log
+# Journal file: C:/Users/rbocos/AppData/Roaming/Xilinx/Vivado\vivado.jou
+# Running On: bocos-ro, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 8, Host memory: 34065 MB
+#-----------------------------------------------------------
+start_gui
+source C:/Temp/Zybo-Z7/hw/scripts/checkout.tcl
+update_compile_order -fileset sources_1
+regenerate_bd_layout
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+wait_on_run impl_1
+archive_project C:/Temp/Zybo-Z7/hw/Zybo-Z7-10-Pcam-5C-hw.xpr.zip -temp_dir C:/Temp/Zybo-Z7/hw -force -include_local_ip_cache -include_config_settings

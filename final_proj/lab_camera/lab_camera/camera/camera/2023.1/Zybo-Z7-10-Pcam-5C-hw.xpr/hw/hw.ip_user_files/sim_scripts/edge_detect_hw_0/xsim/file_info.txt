@@ -1,0 +1,7 @@
+edge_kernel.v,verilog,xil_defaultlib,../../../../hw.gen/sources_1/ip/edge_detect_hw_0/edge_kernel.v,
+intensity_kernel.v,verilog,xil_defaultlib,../../../../hw.gen/sources_1/ip/edge_detect_hw_0/intensity_kernel.v,
+roberts_kernel.v,verilog,xil_defaultlib,../../../../hw.gen/sources_1/ip/edge_detect_hw_0/roberts_kernel.v,
+stencil_buf.v,verilog,xil_defaultlib,../../../../hw.gen/sources_1/ip/edge_detect_hw_0/stencil_buf.v,
+edge_detect_hw.v,verilog,xil_defaultlib,../../../../hw.gen/sources_1/ip/edge_detect_hw_0/edge_detect_hw.v,
+edge_detect_hw_0.v,verilog,xil_defaultlib,../../../../hw.gen/sources_1/ip/edge_detect_hw_0/sim/edge_detect_hw_0.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v
