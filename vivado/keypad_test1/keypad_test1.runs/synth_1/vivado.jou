@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Fri Nov 28 20:50:08 2025
+# Process ID: 3536213
+# Current directory: /home/moon/school_stuff/sem14/EE277/labs/vivado_277/keypad_test1/keypad_test1.runs/synth_1
+# Command line: vivado -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
+# Log file: /home/moon/school_stuff/sem14/EE277/labs/vivado_277/keypad_test1/keypad_test1.runs/synth_1/design_1_wrapper.vds
+# Journal file: /home/moon/school_stuff/sem14/EE277/labs/vivado_277/keypad_test1/keypad_test1.runs/synth_1/vivado.jou
+# Running On: razorback, OS: Linux, CPU Frequency: 2270.342 MHz, CPU Physical cores: 12, Host memory: 14484 MB
+#-----------------------------------------------------------
+source design_1_wrapper.tcl -notrace
