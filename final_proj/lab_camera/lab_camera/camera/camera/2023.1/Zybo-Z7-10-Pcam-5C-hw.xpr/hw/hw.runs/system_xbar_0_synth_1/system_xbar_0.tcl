@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Temp/Zybo-Z7/hw/proj/hw.runs/system_xbar_0_synth_1/system_xbar_0.tcl"
+  variable script "Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/system_xbar_0_synth_1/system_xbar_0.tcl"
   variable category "vivado_synth"
 }
 
@@ -79,21 +79,25 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir C:/Temp/Zybo-Z7/hw/proj/hw.cache/wt [current_project]
-set_property parent.project_path C:/Temp/Zybo-Z7/hw/proj/hw.xpr [current_project]
+set_property webtalk.parent_dir Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.cache/wt [current_project]
+set_property parent.project_path Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property board_part_repo_paths {C:/Users/rbocos/Downloads/vivado-boards/new} [current_project]
+set_property board_part_repo_paths {Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.board} [current_project]
 set_property board_part digilentinc.com:zybo-z7-10:part0:1.1 [current_project]
-set_property ip_repo_paths c:/Temp/Zybo-Z7/hw/repo [current_project]
+set_property ip_repo_paths {
+  z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.ipdefs/repo
+  z:/EE_277/lab9/repos/src
+  z:/EE_277_proj/EE277-Final-Project/vivado-library
+} [current_project]
 update_ip_catalog
-set_property ip_output_repo c:/Temp/Zybo-Z7/hw/proj/cache [current_project]
+set_property ip_output_repo z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet c:/Temp/Zybo-Z7/hw/proj/hw.srcs/sources_1/bd/system/ip/system_xbar_0/system_xbar_0.xci
-set_property used_in_implementation false [get_files -all c:/Temp/Zybo-Z7/hw/proj/hw.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_ooc.xdc]
+read_ip -quiet Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.srcs/sources_1/bd/system/ip/system_xbar_0/system_xbar_0.xci
+set_property used_in_implementation false [get_files -all z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -109,7 +113,7 @@ set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 OPTRACE "Configure IP Cache" START { }
 
-set cacheID [config_ip_cache -export -no_bom  -dir C:/Temp/Zybo-Z7/hw/proj/hw.runs/system_xbar_0_synth_1 -new_name system_xbar_0 -ip [get_ips system_xbar_0]]
+set cacheID [config_ip_cache -export -no_bom  -dir Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/system_xbar_0_synth_1 -new_name system_xbar_0 -ip [get_ips system_xbar_0]]
 
 OPTRACE "Configure IP Cache" END { }
 if { $cacheID == "" } {
@@ -164,32 +168,32 @@ create_report "system_xbar_0_synth_1_synth_report_utilization_0" "report_utiliza
 OPTRACE "synth reports" END { }
 
 if { [catch {
-  file copy -force C:/Temp/Zybo-Z7/hw/proj/hw.runs/system_xbar_0_synth_1/system_xbar_0.dcp c:/Temp/Zybo-Z7/hw/proj/hw.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0.dcp
+  file copy -force Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/system_xbar_0_synth_1/system_xbar_0.dcp z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub c:/Temp/Zybo-Z7/hw/proj/hw.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.v
+  write_verilog -force -mode synth_stub z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub c:/Temp/Zybo-Z7/hw/proj/hw.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.vhdl
+  write_vhdl -force -mode synth_stub z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim c:/Temp/Zybo-Z7/hw/proj/hw.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_sim_netlist.v
+  write_verilog -force -mode funcsim z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim c:/Temp/Zybo-Z7/hw/proj/hw.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -199,32 +203,32 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force C:/Temp/Zybo-Z7/hw/proj/hw.runs/system_xbar_0_synth_1/system_xbar_0.dcp c:/Temp/Zybo-Z7/hw/proj/hw.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0.dcp
+  file copy -force Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/system_xbar_0_synth_1/system_xbar_0.dcp z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force C:/Temp/Zybo-Z7/hw/proj/hw.runs/system_xbar_0_synth_1/system_xbar_0_stub.v c:/Temp/Zybo-Z7/hw/proj/hw.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.v
+  file rename -force Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/system_xbar_0_synth_1/system_xbar_0_stub.v z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force C:/Temp/Zybo-Z7/hw/proj/hw.runs/system_xbar_0_synth_1/system_xbar_0_stub.vhdl c:/Temp/Zybo-Z7/hw/proj/hw.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.vhdl
+  file rename -force Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/system_xbar_0_synth_1/system_xbar_0_stub.vhdl z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force C:/Temp/Zybo-Z7/hw/proj/hw.runs/system_xbar_0_synth_1/system_xbar_0_sim_netlist.v c:/Temp/Zybo-Z7/hw/proj/hw.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_sim_netlist.v
+  file rename -force Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/system_xbar_0_synth_1/system_xbar_0_sim_netlist.v z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force C:/Temp/Zybo-Z7/hw/proj/hw.runs/system_xbar_0_synth_1/system_xbar_0_sim_netlist.vhdl c:/Temp/Zybo-Z7/hw/proj/hw.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_sim_netlist.vhdl
+  file rename -force Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/system_xbar_0_synth_1/system_xbar_0_sim_netlist.vhdl z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -232,15 +236,15 @@ if { [catch {
 close [open .end.used_ip_cache.rst w]
 }; # end if cacheID 
 
-if {[file isdir C:/Temp/Zybo-Z7/hw/proj/hw.ip_user_files/ip/system_xbar_0]} {
+if {[file isdir Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.ip_user_files/ip/system_xbar_0]} {
   catch { 
-    file copy -force c:/Temp/Zybo-Z7/hw/proj/hw.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.v C:/Temp/Zybo-Z7/hw/proj/hw.ip_user_files/ip/system_xbar_0
+    file copy -force z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.v Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.ip_user_files/ip/system_xbar_0
   }
 }
 
-if {[file isdir C:/Temp/Zybo-Z7/hw/proj/hw.ip_user_files/ip/system_xbar_0]} {
+if {[file isdir Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.ip_user_files/ip/system_xbar_0]} {
   catch { 
-    file copy -force c:/Temp/Zybo-Z7/hw/proj/hw.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.vhdl C:/Temp/Zybo-Z7/hw/proj/hw.ip_user_files/ip/system_xbar_0
+    file copy -force z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.vhdl Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.ip_user_files/ip/system_xbar_0
   }
 }
 file delete __synthesis_is_running__

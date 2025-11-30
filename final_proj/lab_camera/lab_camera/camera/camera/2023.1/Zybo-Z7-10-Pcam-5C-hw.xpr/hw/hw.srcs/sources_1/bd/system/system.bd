@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x311AC25E82E99AD6",
+      "boundary_crc": "0x3FBF6E35EB3B6C5A",
       "device": "xc7z010clg400-1",
       "gen_directory": "../../../../hw.gen/sources_1/bd/system",
       "name": "system",
@@ -43,12 +43,14 @@
         "m02_couplers": {},
         "m03_couplers": {},
         "m04_couplers": {},
-        "m05_couplers": {}
+        "m05_couplers": {},
+        "m06_couplers": {}
       },
       "v_axi4s_vid_out_0": "",
       "video_dynclk": "",
       "vtg": "",
-      "edge_detect_hw_0": ""
+      "edge_detect_hw_0": "",
+      "PmodKYPD_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -323,6 +325,109 @@
             "direction": "O",
             "left": "2",
             "right": "0"
+          }
+        }
+      },
+      "JE": {
+        "mode": "Master",
+        "vlnv_bus_definition": "digilentinc.com:interface:pmod:1.0",
+        "vlnv": "digilentinc.com:interface:pmod_rtl:1.0",
+        "port_maps": {
+          "PIN1_O": {
+            "physical_name": "JE_pin1_o",
+            "direction": "O"
+          },
+          "PIN7_I": {
+            "physical_name": "JE_pin7_i",
+            "direction": "I"
+          },
+          "PIN2_O": {
+            "physical_name": "JE_pin2_o",
+            "direction": "O"
+          },
+          "PIN8_I": {
+            "physical_name": "JE_pin8_i",
+            "direction": "I"
+          },
+          "PIN3_O": {
+            "physical_name": "JE_pin3_o",
+            "direction": "O"
+          },
+          "PIN9_I": {
+            "physical_name": "JE_pin9_i",
+            "direction": "I"
+          },
+          "PIN10_O": {
+            "physical_name": "JE_pin10_o",
+            "direction": "O"
+          },
+          "PIN4_O": {
+            "physical_name": "JE_pin4_o",
+            "direction": "O"
+          },
+          "PIN3_I": {
+            "physical_name": "JE_pin3_i",
+            "direction": "I"
+          },
+          "PIN4_I": {
+            "physical_name": "JE_pin4_i",
+            "direction": "I"
+          },
+          "PIN1_I": {
+            "physical_name": "JE_pin1_i",
+            "direction": "I"
+          },
+          "PIN2_I": {
+            "physical_name": "JE_pin2_i",
+            "direction": "I"
+          },
+          "PIN10_T": {
+            "physical_name": "JE_pin10_t",
+            "direction": "O"
+          },
+          "PIN8_T": {
+            "physical_name": "JE_pin8_t",
+            "direction": "O"
+          },
+          "PIN9_T": {
+            "physical_name": "JE_pin9_t",
+            "direction": "O"
+          },
+          "PIN4_T": {
+            "physical_name": "JE_pin4_t",
+            "direction": "O"
+          },
+          "PIN9_O": {
+            "physical_name": "JE_pin9_o",
+            "direction": "O"
+          },
+          "PIN10_I": {
+            "physical_name": "JE_pin10_i",
+            "direction": "I"
+          },
+          "PIN7_T": {
+            "physical_name": "JE_pin7_t",
+            "direction": "O"
+          },
+          "PIN1_T": {
+            "physical_name": "JE_pin1_t",
+            "direction": "O"
+          },
+          "PIN2_T": {
+            "physical_name": "JE_pin2_t",
+            "direction": "O"
+          },
+          "PIN7_O": {
+            "physical_name": "JE_pin7_o",
+            "direction": "O"
+          },
+          "PIN3_T": {
+            "physical_name": "JE_pin3_t",
+            "direction": "O"
+          },
+          "PIN8_O": {
+            "physical_name": "JE_pin8_o",
+            "direction": "O"
           }
         }
       }
@@ -2047,7 +2152,7 @@
         "xci_name": "system_ps7_0_axi_periph_0",
         "parameters": {
           "NUM_MI": {
-            "value": "6"
+            "value": "7"
           },
           "SYNCHRONIZATION_STAGES": {
             "value": "2"
@@ -2085,6 +2190,11 @@
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
           },
           "M05_AXI": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+          },
+          "M06_AXI": {
             "mode": "Master",
             "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
@@ -2215,6 +2325,22 @@
           "M05_ARESETN": {
             "type": "rst",
             "direction": "I"
+          },
+          "M06_ACLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_BUSIF": {
+                "value": "M06_AXI"
+              },
+              "ASSOCIATED_RESET": {
+                "value": "M06_ARESETN"
+              }
+            }
+          },
+          "M06_ARESETN": {
+            "type": "rst",
+            "direction": "I"
           }
         },
         "components": {
@@ -2225,7 +2351,7 @@
             "inst_hier_path": "ps7_0_axi_periph/xbar",
             "parameters": {
               "NUM_MI": {
-                "value": "6"
+                "value": "7"
               },
               "NUM_SI": {
                 "value": "1"
@@ -2244,7 +2370,8 @@
                   "M02_AXI",
                   "M03_AXI",
                   "M04_AXI",
-                  "M05_AXI"
+                  "M05_AXI",
+                  "M06_AXI"
                 ]
               }
             }
@@ -2685,6 +2812,62 @@
                 ]
               }
             }
+          },
+          "m06_couplers": {
+            "interface_ports": {
+              "M_AXI": {
+                "mode": "Master",
+                "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+              },
+              "S_AXI": {
+                "mode": "Slave",
+                "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+              }
+            },
+            "ports": {
+              "M_ACLK": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_BUSIF": {
+                    "value": "M_AXI"
+                  },
+                  "ASSOCIATED_RESET": {
+                    "value": "M_ARESETN"
+                  }
+                }
+              },
+              "M_ARESETN": {
+                "type": "rst",
+                "direction": "I"
+              },
+              "S_ACLK": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_BUSIF": {
+                    "value": "S_AXI"
+                  },
+                  "ASSOCIATED_RESET": {
+                    "value": "S_ARESETN"
+                  }
+                }
+              },
+              "S_ARESETN": {
+                "type": "rst",
+                "direction": "I"
+              }
+            },
+            "interface_nets": {
+              "m06_couplers_to_m06_couplers": {
+                "interface_ports": [
+                  "S_AXI",
+                  "M_AXI"
+                ]
+              }
+            }
           }
         },
         "interface_nets": {
@@ -2722,6 +2905,12 @@
             "interface_ports": [
               "m05_couplers/M_AXI",
               "M05_AXI"
+            ]
+          },
+          "m06_couplers_to_ps7_0_axi_periph": {
+            "interface_ports": [
+              "m06_couplers/M_AXI",
+              "M06_AXI"
             ]
           },
           "ps7_0_axi_periph_to_s00_couplers": {
@@ -2770,6 +2959,12 @@
             "interface_ports": [
               "xbar/M05_AXI",
               "m05_couplers/S_AXI"
+            ]
+          },
+          "xbar_to_m06_couplers": {
+            "interface_ports": [
+              "xbar/M06_AXI",
+              "m06_couplers/S_AXI"
             ]
           }
         },
@@ -2846,6 +3041,18 @@
               "m05_couplers/M_ARESETN"
             ]
           },
+          "M06_ACLK_1": {
+            "ports": [
+              "M06_ACLK",
+              "m06_couplers/M_ACLK"
+            ]
+          },
+          "M06_ARESETN_1": {
+            "ports": [
+              "M06_ARESETN",
+              "m06_couplers/M_ARESETN"
+            ]
+          },
           "S00_ACLK_1": {
             "ports": [
               "S00_ACLK",
@@ -2868,7 +3075,8 @@
               "m02_couplers/S_ACLK",
               "m03_couplers/S_ACLK",
               "m04_couplers/S_ACLK",
-              "m05_couplers/S_ACLK"
+              "m05_couplers/S_ACLK",
+              "m06_couplers/S_ACLK"
             ]
           },
           "ps7_0_axi_periph_ARESETN_net": {
@@ -2881,7 +3089,8 @@
               "m02_couplers/S_ARESETN",
               "m03_couplers/S_ARESETN",
               "m04_couplers/S_ARESETN",
-              "m05_couplers/S_ARESETN"
+              "m05_couplers/S_ARESETN",
+              "m06_couplers/S_ARESETN"
             ]
           }
         }
@@ -3014,6 +3223,19 @@
         "xci_name": "system_edge_detect_hw_0_0",
         "xci_path": "ip\\system_edge_detect_hw_0_0\\system_edge_detect_hw_0_0.xci",
         "inst_hier_path": "edge_detect_hw_0"
+      },
+      "PmodKYPD_0": {
+        "vlnv": "digilentinc.com:IP:PmodKYPD:1.0",
+        "xci_name": "system_PmodKYPD_0_0",
+        "xci_path": "ip\\system_PmodKYPD_0_0\\system_PmodKYPD_0_0.xci",
+        "inst_hier_path": "PmodKYPD_0",
+        "interface_ports": {
+          "AXI_LITE_GPIO": {
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "mode": "Slave",
+            "memory_map_ref": "AXI_LITE_GPIO"
+          }
+        }
       }
     },
     "interface_nets": {
@@ -3039,6 +3261,12 @@
         "interface_ports": [
           "MIPI_CSI_2_RX_0/rx_mipi_ppi",
           "MIPI_D_PHY_RX_0/D_PHY_PPI"
+        ]
+      },
+      "PmodKYPD_0_Pmod_out": {
+        "interface_ports": [
+          "JE",
+          "PmodKYPD_0/Pmod_out"
         ]
       },
       "axi_mem_intercon_1_M00_AXI": {
@@ -3147,6 +3375,12 @@
         "interface_ports": [
           "AXI_GammaCorrection_1/s_axil",
           "ps7_0_axi_periph/M05_AXI"
+        ]
+      },
+      "ps7_0_axi_periph_M06_AXI": {
+        "interface_ports": [
+          "ps7_0_axi_periph/M06_AXI",
+          "PmodKYPD_0/AXI_LITE_GPIO"
         ]
       },
       "rgb2dvi_0_TMDS": {
@@ -3329,7 +3563,9 @@
           "v_axi4s_vid_out_0/aresetn",
           "video_dynclk/s_axi_aresetn",
           "vtg/s_axi_aresetn",
-          "edge_detect_hw_0/rst_n"
+          "edge_detect_hw_0/rst_n",
+          "ps7_0_axi_periph/M06_ARESETN",
+          "PmodKYPD_0/s_axi_aresetn"
         ]
       },
       "rst_clk_wiz_0_50M_peripheral_reset": {
@@ -3368,7 +3604,9 @@
           "ps7_0_axi_periph/M04_ACLK",
           "ps7_0_axi_periph/M05_ACLK",
           "video_dynclk/s_axi_aclk",
-          "vtg/s_axi_aclk"
+          "vtg/s_axi_aclk",
+          "ps7_0_axi_periph/M06_ACLK",
+          "PmodKYPD_0/s_axi_aclk"
         ]
       },
       "v_axi4s_vid_out_0_locked": {
@@ -3431,6 +3669,13 @@
                 "range": "64K",
                 "offset_base_param": "C_S_AXI_LITE_BASEADDR",
                 "offset_high_param": "C_S_AXI_LITE_HIGHADDR"
+              },
+              "SEG_PmodKYPD_0_Reg0": {
+                "address_block": "/PmodKYPD_0/AXI_LITE_GPIO/Reg0",
+                "offset": "0x40000000",
+                "range": "4K",
+                "offset_base_param": "AXI_LITE_GPIO_BASEADDR",
+                "offset_high_param": "AXI_LITE_GPIO_HIGHADDR"
               },
               "SEG_axi_vdma_0_Reg": {
                 "address_block": "/axi_vdma_0/S_AXI_LITE/Reg",

@@ -1,24 +1,59 @@
 Nothing to build in platform 'hw_pcam'
 
-00:02:23 **** Incremental Build of configuration Debug for project pcam_hdmi ****
+19:34:59 **** Incremental Build of configuration Debug for project pcam_hdmi ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
 ' '
 make --no-print-directory main-build
+'Building file: ../src/timer_ps/timer_ps.c'
+'Invoking: ARM v7 g++ compiler'
+arm-none-eabi-g++ -Wall -O2 -funroll-loops -ftree-vectorize -g3 -IC:/Temp/Zybo-Z7/sw/src/pcam_hdmi/src -c -fmessage-length=0 -MT"src/timer_ps/timer_ps.o" -mcpu=cortex-a9 -mfpu=neon-vfpv3 -mfloat-abi=hard -IZ:/EE_277_proj/EE277-Final-Project/final_proj/final_proj_vit/hw_pcam/export/hw_pcam/sw/hw_pcam/standalone_domain/bspinclude/include -MMD -MP -MF"src/timer_ps/timer_ps.d" -MT"src/timer_ps/timer_ps.o" -o "src/timer_ps/timer_ps.o" "../src/timer_ps/timer_ps.c"
+'Finished building: ../src/timer_ps/timer_ps.c'
+' '
+'Building file: ../src/platform/platform.c'
+'Invoking: ARM v7 g++ compiler'
+arm-none-eabi-g++ -Wall -O2 -funroll-loops -ftree-vectorize -g3 -IC:/Temp/Zybo-Z7/sw/src/pcam_hdmi/src -c -fmessage-length=0 -MT"src/platform/platform.o" -mcpu=cortex-a9 -mfpu=neon-vfpv3 -mfloat-abi=hard -IZ:/EE_277_proj/EE277-Final-Project/final_proj/final_proj_vit/hw_pcam/export/hw_pcam/sw/hw_pcam/standalone_domain/bspinclude/include -MMD -MP -MF"src/platform/platform.d" -MT"src/platform/platform.o" -o "src/platform/platform.o" "../src/platform/platform.c"
+'Finished building: ../src/platform/platform.c'
+' '
+'Building file: ../src/ov5640/OV5640.cpp'
+'Invoking: ARM v7 g++ compiler'
+arm-none-eabi-g++ -Wall -O2 -funroll-loops -ftree-vectorize -g3 -IC:/Temp/Zybo-Z7/sw/src/pcam_hdmi/src -c -fmessage-length=0 -MT"src/ov5640/OV5640.o" -mcpu=cortex-a9 -mfpu=neon-vfpv3 -mfloat-abi=hard -IZ:/EE_277_proj/EE277-Final-Project/final_proj/final_proj_vit/hw_pcam/export/hw_pcam/sw/hw_pcam/standalone_domain/bspinclude/include -MMD -MP -MF"src/ov5640/OV5640.d" -MT"src/ov5640/OV5640.o" -o "src/ov5640/OV5640.o" "../src/ov5640/OV5640.cpp"
+'Finished building: ../src/ov5640/OV5640.cpp'
+' '
+'Building file: ../src/intc/intc.c'
+'Invoking: ARM v7 g++ compiler'
+arm-none-eabi-g++ -Wall -O2 -funroll-loops -ftree-vectorize -g3 -IC:/Temp/Zybo-Z7/sw/src/pcam_hdmi/src -c -fmessage-length=0 -MT"src/intc/intc.o" -mcpu=cortex-a9 -mfpu=neon-vfpv3 -mfloat-abi=hard -IZ:/EE_277_proj/EE277-Final-Project/final_proj/final_proj_vit/hw_pcam/export/hw_pcam/sw/hw_pcam/standalone_domain/bspinclude/include -MMD -MP -MF"src/intc/intc.d" -MT"src/intc/intc.o" -o "src/intc/intc.o" "../src/intc/intc.c"
+'Finished building: ../src/intc/intc.c'
+' '
+'Building file: ../src/dynclk/dynclk.c'
+'Invoking: ARM v7 g++ compiler'
+arm-none-eabi-g++ -Wall -O2 -funroll-loops -ftree-vectorize -g3 -IC:/Temp/Zybo-Z7/sw/src/pcam_hdmi/src -c -fmessage-length=0 -MT"src/dynclk/dynclk.o" -mcpu=cortex-a9 -mfpu=neon-vfpv3 -mfloat-abi=hard -IZ:/EE_277_proj/EE277-Final-Project/final_proj/final_proj_vit/hw_pcam/export/hw_pcam/sw/hw_pcam/standalone_domain/bspinclude/include -MMD -MP -MF"src/dynclk/dynclk.d" -MT"src/dynclk/dynclk.o" -o "src/dynclk/dynclk.o" "../src/dynclk/dynclk.c"
+'Finished building: ../src/dynclk/dynclk.c'
+' '
+'Building file: ../src/display_ctrl/display_ctrl.c'
+'Invoking: ARM v7 g++ compiler'
+arm-none-eabi-g++ -Wall -O2 -funroll-loops -ftree-vectorize -g3 -IC:/Temp/Zybo-Z7/sw/src/pcam_hdmi/src -c -fmessage-length=0 -MT"src/display_ctrl/display_ctrl.o" -mcpu=cortex-a9 -mfpu=neon-vfpv3 -mfloat-abi=hard -IZ:/EE_277_proj/EE277-Final-Project/final_proj/final_proj_vit/hw_pcam/export/hw_pcam/sw/hw_pcam/standalone_domain/bspinclude/include -MMD -MP -MF"src/display_ctrl/display_ctrl.d" -MT"src/display_ctrl/display_ctrl.o" -o "src/display_ctrl/display_ctrl.o" "../src/display_ctrl/display_ctrl.c"
+'Finished building: ../src/display_ctrl/display_ctrl.c'
+' '
+'Building file: Z:/EE_277_proj/EE277-Final-Project/vivado-library/ip/Pmods/PmodKYPD_v1_0/drivers/PmodKYPD_v1_0/src/PmodKYPD.c'
+'Invoking: ARM v7 g++ compiler'
+arm-none-eabi-g++ -Wall -O2 -funroll-loops -ftree-vectorize -g3 -IC:/Temp/Zybo-Z7/sw/src/pcam_hdmi/src -c -fmessage-length=0 -MT"src/PmodKYPD_v1_0/src/PmodKYPD.o" -mcpu=cortex-a9 -mfpu=neon-vfpv3 -mfloat-abi=hard -IZ:/EE_277_proj/EE277-Final-Project/final_proj/final_proj_vit/hw_pcam/export/hw_pcam/sw/hw_pcam/standalone_domain/bspinclude/include -MMD -MP -MF"src/PmodKYPD_v1_0/src/PmodKYPD.d" -MT"src/PmodKYPD_v1_0/src/PmodKYPD.o" -o "src/PmodKYPD_v1_0/src/PmodKYPD.o" "Z:/EE_277_proj/EE277-Final-Project/vivado-library/ip/Pmods/PmodKYPD_v1_0/drivers/PmodKYPD_v1_0/src/PmodKYPD.c"
+'Finished building: Z:/EE_277_proj/EE277-Final-Project/vivado-library/ip/Pmods/PmodKYPD_v1_0/drivers/PmodKYPD_v1_0/src/PmodKYPD.c'
+' '
 'Building file: ../src/main.cc'
 'Invoking: ARM v7 g++ compiler'
-arm-none-eabi-g++ -Wall -O2 -funroll-loops -ftree-vectorize -g3 -IC:/Temp/Zybo-Z7/sw/src/pcam_hdmi/src -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=neon-vfpv3 -mfloat-abi=hard -IZ:/EE_277/final_proj/final_proj_vit/hw_pcam/export/hw_pcam/sw/hw_pcam/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cc"
+arm-none-eabi-g++ -Wall -O2 -funroll-loops -ftree-vectorize -g3 -IC:/Temp/Zybo-Z7/sw/src/pcam_hdmi/src -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=neon-vfpv3 -mfloat-abi=hard -IZ:/EE_277_proj/EE277-Final-Project/final_proj/final_proj_vit/hw_pcam/export/hw_pcam/sw/hw_pcam/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cc"
 'Finished building: ../src/main.cc'
 ' '
 'Building target: pcam_hdmi.elf'
 'Invoking: ARM v7 g++ linker'
-arm-none-eabi-g++ -mcpu=cortex-a9 -mfpu=neon-vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LZ:/EE_277/final_proj/final_proj_vit/hw_pcam/export/hw_pcam/sw/hw_pcam/standalone_domain/bsplib/lib -o "pcam_hdmi.elf"  ./src/timer_ps/timer_ps.o  ./src/platform/platform.o  ./src/ov5640/OV5640.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+arm-none-eabi-g++ -mcpu=cortex-a9 -mfpu=neon-vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LZ:/EE_277_proj/EE277-Final-Project/final_proj/final_proj_vit/hw_pcam/export/hw_pcam/sw/hw_pcam/standalone_domain/bsplib/lib -o "pcam_hdmi.elf"  ./src/timer_ps/timer_ps.o  ./src/platform/platform.o  ./src/ov5640/OV5640.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/PmodKYPD_v1_0/src/PmodKYPD.o  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
 'Finished building target: pcam_hdmi.elf'
 ' '
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size pcam_hdmi.elf  |tee "pcam_hdmi.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 635962	   3884	  29208	 669054	  a357e	pcam_hdmi.elf
+ 637988	   3908	  29232	 671128	  a3d98	pcam_hdmi.elf
 'Finished building: pcam_hdmi.elf.size'
 ' '

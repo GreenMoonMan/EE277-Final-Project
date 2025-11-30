@@ -2,8 +2,13 @@
 <section name="Workbench">
 	<section name="FileSystemImportWizard">
 		<item key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID" value="false"/>
-		<item key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID" value="false"/>
+		<item key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID" value="true"/>
+		<item key="WizardFileSystemResourceImportPage1.STORE_CREATE_VIRTUAL_FOLDERS_ID" value="true"/>
+		<item key="WizardFileSystemResourceImportPage1.STORE_CREATE_LINKS_IN_WORKSPACE_ID" value="true"/>
+		<item key="WizardFileSystemResourceImportPage1.STORE_PATH_VARIABLE_SELECTED_ID" value="true"/>
+		<item key="WizardFileSystemResourceImportPage1.STORE_PATH_VARIABLE_NAME_ID" value="PROJECT_LOC"/>
 		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="Z:\EE_277_proj\EE277-Final-Project\vivado-library\ip\Pmods\PmodKYPD_v1_0\drivers\PmodKYPD_v1_0"/>
 			<item value="Z:\EE_277\lab9\lab9_vit\Zybo-Z7-10-HDMI\src\dynclk"/>
 			<item value="Z:\EE_277\lab9\lab9_vit\Zybo-Z7-10-HDMI\src\video_capture"/>
 			<item value="Z:\EE_277\lab9\lab9_vit\Zybo-Z7-10-HDMI\src\timer_ps"/>

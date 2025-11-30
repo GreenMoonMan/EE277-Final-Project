@@ -226,6 +226,24 @@
             },
             "V5": {
                 "VT": "AC",
+                "BA": "0x40000000",
+                "HA": "0x40000FFF",
+                "BP": "AXI_LITE_GPIO_BASEADDR",
+                "HP": "AXI_LITE_GPIO_HIGHADDR",
+                "MA": "Data",
+                "MX": "/processing_system7_0",
+                "MI": "M_AXI_GP0",
+                "MS": "SEG_PmodKYPD_0_Reg0",
+                "MV": "xilinx.com:ip:processing_system7:5.5",
+                "SX": "/PmodKYPD_0",
+                "SI": "AXI_LITE_GPIO",
+                "SS": "Reg0",
+                "SV": "digilentinc.com:IP:PmodKYPD:1.0",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V6": {
+                "VT": "AC",
                 "BA": "0x43000000",
                 "HA": "0x4300FFFF",
                 "BP": "C_BASEADDR",
@@ -242,7 +260,7 @@
                 "TM": "both",
                 "TU": "register"
             },
-            "V6": {
+            "V7": {
                 "VT": "AC",
                 "BA": "0x43C00000",
                 "HA": "0x43C0FFFF",
@@ -260,7 +278,7 @@
                 "TM": "both",
                 "TU": "register"
             },
-            "V7": {
+            "V8": {
                 "VT": "AC",
                 "BA": "0x43C10000",
                 "HA": "0x43C1FFFF",
@@ -278,7 +296,7 @@
                 "TM": "both",
                 "TU": "register"
             },
-            "V8": {
+            "V9": {
                 "VT": "AC",
                 "BA": "0x43C20000",
                 "HA": "0x43C2FFFF",
@@ -296,7 +314,7 @@
                 "TM": "both",
                 "TU": "register"
             },
-            "V9": {
+            "V10": {
                 "VT": "AC",
                 "BA": "0x43C30000",
                 "HA": "0x43C3FFFF",
@@ -314,7 +332,7 @@
                 "TM": "both",
                 "TU": "register"
             },
-            "V10": {
+            "V11": {
                 "VT": "AC",
                 "BA": "0x43C40000",
                 "HA": "0x43C4FFFF",
@@ -379,6 +397,11 @@
             },
             {
                 "src": "V10",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V11",
                 "trg": "V2",
                 "EH": "2"
             }

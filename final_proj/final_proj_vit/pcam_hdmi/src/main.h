@@ -37,6 +37,8 @@
 
 #include "display_ctrl/display_ctrl.h"  // for DisplayStart/Stop/ChangeFrame
 
+#include "PmodKYPD.h"
+
 
 /* ------------------------------------------------------------ */
 /*                  Hardware Device IDs                         */
@@ -101,5 +103,8 @@ void run_snapshot_mode(
     digilent::OV5640& cam,
     digilent::VideoOutput& vid);
 
+
+// KEYPAD Function Prototypes:
+void run_keypad_test(PmodKYPD* kpd);
 
 #endif /* CAMERA_DEMO_H_ */

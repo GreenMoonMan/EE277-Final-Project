@@ -25,4 +25,31 @@
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 		<nature>org.eclipse.cdt.core.ccnature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/PmodKYPD_v1_0</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>src/PmodKYPD_v1_0/src</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>src/PmodKYPD_v1_0/src/Makefile</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/vivado-library/ip/Pmods/PmodKYPD_v1_0/drivers/PmodKYPD_v1_0/src/Makefile</locationURI>
+		</link>
+		<link>
+			<name>src/PmodKYPD_v1_0/src/PmodKYPD.c</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/vivado-library/ip/Pmods/PmodKYPD_v1_0/drivers/PmodKYPD_v1_0/src/PmodKYPD.c</locationURI>
+		</link>
+		<link>
+			<name>src/PmodKYPD_v1_0/src/PmodKYPD.h</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/vivado-library/ip/Pmods/PmodKYPD_v1_0/drivers/PmodKYPD_v1_0/src/PmodKYPD.h</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

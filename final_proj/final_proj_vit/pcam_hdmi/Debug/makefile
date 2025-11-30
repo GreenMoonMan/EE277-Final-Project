@@ -14,6 +14,7 @@ RM := rm -rf
 -include src/intc/subdir.mk
 -include src/dynclk/subdir.mk
 -include src/display_ctrl/subdir.mk
+-include src/PmodKYPD_v1_0/src/subdir.mk
 -include src/subdir.mk
 -include subdir.mk
 -include objects.mk
@@ -58,7 +59,7 @@ main-build: pcam_hdmi.elf secondary-outputs
 pcam_hdmi.elf: $(OBJS) ../src/lscript.ld $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM v7 g++ linker'
-	arm-none-eabi-g++ -mcpu=cortex-a9 -mfpu=neon-vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LZ:/EE_277/final_proj/final_proj_vit/hw_pcam/export/hw_pcam/sw/hw_pcam/standalone_domain/bsplib/lib -o "pcam_hdmi.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-g++ -mcpu=cortex-a9 -mfpu=neon-vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LZ:/EE_277_proj/EE277-Final-Project/final_proj/final_proj_vit/hw_pcam/export/hw_pcam/sw/hw_pcam/standalone_domain/bsplib/lib -o "pcam_hdmi.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

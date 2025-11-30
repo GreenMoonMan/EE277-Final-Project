@@ -132,15 +132,16 @@ set_property -dict {PACKAGE_PIN B19 IOSTANDARD TMDS_33} [get_ports {hdmi_tx_data
 #set_property -dict { PACKAGE_PIN V17   IOSTANDARD LVDS     } [get_ports { jd_p[4] }]; #IO_L21P_T3_DQS_34 Sch=jd_p[4]
 
 
-##Pmod Header JE
-#set_property -dict { PACKAGE_PIN V12   IOSTANDARD LVCMOS33 } [get_ports { je[1] }]; #IO_L4P_T0_34 Sch=je[1]
-#set_property -dict { PACKAGE_PIN W16   IOSTANDARD LVCMOS33 } [get_ports { je[2] }]; #IO_L18N_T2_34 Sch=je[2]
-#set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { je[3] }]; #IO_25_35 Sch=je[3]
-#set_property -dict { PACKAGE_PIN H15   IOSTANDARD LVCMOS33 } [get_ports { je[4] }]; #IO_L19P_T3_35 Sch=je[4]
-#set_property -dict { PACKAGE_PIN V13   IOSTANDARD LVCMOS33 } [get_ports { je[7] }]; #IO_L3N_T0_DQS_34 Sch=je[7]
-#set_property -dict { PACKAGE_PIN U17   IOSTANDARD LVCMOS33 } [get_ports { je[8] }]; #IO_L9N_T1_DQS_34 Sch=je[8]
-#set_property -dict { PACKAGE_PIN T17   IOSTANDARD LVCMOS33 } [get_ports { je[9] }]; #IO_L20P_T3_34 Sch=je[9]
-#set_property -dict { PACKAGE_PIN Y17   IOSTANDARD LVCMOS33 } [get_ports { je[10] }]; #IO_L7N_T1_34 Sch=je[10]
+##Pmod Header JE (KYPD)
+set_property -dict { PACKAGE_PIN V12   IOSTANDARD LVCMOS33 } [get_ports { JE_pin1_io }]; #IO_L4P_T0_34 Sch=je[1]
+set_property -dict { PACKAGE_PIN W16   IOSTANDARD LVCMOS33 } [get_ports { JE_pin2_io }]; #IO_L18N_T2_34 Sch=je[2]
+set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { JE_pin3_io }]; #IO_25_35 Sch=je[3]
+set_property -dict { PACKAGE_PIN H15   IOSTANDARD LVCMOS33 } [get_ports { JE_pin4_io }]; #IO_L19P_T3_35 Sch=je[4]
+
+set_property -dict { PACKAGE_PIN V13   IOSTANDARD LVCMOS33 } [get_ports { JE_pin7_io }]; #IO_L3N_T0_DQS_34 Sch=je[7]
+set_property -dict { PACKAGE_PIN U17   IOSTANDARD LVCMOS33 } [get_ports { JE_pin8_io }]; #IO_L9N_T1_DQS_34 Sch=je[8]
+set_property -dict { PACKAGE_PIN T17   IOSTANDARD LVCMOS33 } [get_ports { JE_pin9_io }]; #IO_L20P_T3_34 Sch=je[9]
+set_property -dict { PACKAGE_PIN Y17   IOSTANDARD LVCMOS33 } [get_ports { JE_pin10_io  }]; #IO_L7N_T1_34 Sch=je[10]
 
 
 #USB-OTG overcurrent detect pin

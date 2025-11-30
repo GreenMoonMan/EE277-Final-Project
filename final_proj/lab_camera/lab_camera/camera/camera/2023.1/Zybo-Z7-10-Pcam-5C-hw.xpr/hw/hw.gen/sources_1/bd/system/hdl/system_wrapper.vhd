@@ -2,7 +2,7 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
---Date        : Tue Nov 18 21:38:14 2025
+--Date        : Sat Nov 29 18:48:53 2025
 --Host        : DESKTOP-D2NNA1U running 64-bit major release  (build 9200)
 --Command     : generate_target system_wrapper.bd
 --Design      : system_wrapper
@@ -35,6 +35,14 @@ entity system_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
+    JE_pin10_io : inout STD_LOGIC;
+    JE_pin1_io : inout STD_LOGIC;
+    JE_pin2_io : inout STD_LOGIC;
+    JE_pin3_io : inout STD_LOGIC;
+    JE_pin4_io : inout STD_LOGIC;
+    JE_pin7_io : inout STD_LOGIC;
+    JE_pin8_io : inout STD_LOGIC;
+    JE_pin9_io : inout STD_LOGIC;
     cam_gpio_tri_io : inout STD_LOGIC_VECTOR ( 0 to 0 );
     cam_iic_scl_io : inout STD_LOGIC;
     cam_iic_sda_io : inout STD_LOGIC;
@@ -93,6 +101,30 @@ architecture STRUCTURE of system_wrapper is
     hdmi_tx_clk_n : out STD_LOGIC;
     hdmi_tx_data_p : out STD_LOGIC_VECTOR ( 2 downto 0 );
     hdmi_tx_data_n : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    JE_pin1_o : out STD_LOGIC;
+    JE_pin7_i : in STD_LOGIC;
+    JE_pin2_o : out STD_LOGIC;
+    JE_pin8_i : in STD_LOGIC;
+    JE_pin3_o : out STD_LOGIC;
+    JE_pin9_i : in STD_LOGIC;
+    JE_pin10_o : out STD_LOGIC;
+    JE_pin4_o : out STD_LOGIC;
+    JE_pin3_i : in STD_LOGIC;
+    JE_pin4_i : in STD_LOGIC;
+    JE_pin1_i : in STD_LOGIC;
+    JE_pin2_i : in STD_LOGIC;
+    JE_pin10_t : out STD_LOGIC;
+    JE_pin8_t : out STD_LOGIC;
+    JE_pin9_t : out STD_LOGIC;
+    JE_pin4_t : out STD_LOGIC;
+    JE_pin9_o : out STD_LOGIC;
+    JE_pin10_i : in STD_LOGIC;
+    JE_pin7_t : out STD_LOGIC;
+    JE_pin1_t : out STD_LOGIC;
+    JE_pin2_t : out STD_LOGIC;
+    JE_pin7_o : out STD_LOGIC;
+    JE_pin3_t : out STD_LOGIC;
+    JE_pin8_o : out STD_LOGIC;
     dphy_clk_lp_n : in STD_LOGIC;
     dphy_clk_lp_p : in STD_LOGIC;
     dphy_data_hs_n : in STD_LOGIC_VECTOR ( 1 downto 0 );
@@ -110,6 +142,30 @@ architecture STRUCTURE of system_wrapper is
     IO : inout STD_LOGIC
   );
   end component IOBUF;
+  signal JE_pin10_i : STD_LOGIC;
+  signal JE_pin10_o : STD_LOGIC;
+  signal JE_pin10_t : STD_LOGIC;
+  signal JE_pin1_i : STD_LOGIC;
+  signal JE_pin1_o : STD_LOGIC;
+  signal JE_pin1_t : STD_LOGIC;
+  signal JE_pin2_i : STD_LOGIC;
+  signal JE_pin2_o : STD_LOGIC;
+  signal JE_pin2_t : STD_LOGIC;
+  signal JE_pin3_i : STD_LOGIC;
+  signal JE_pin3_o : STD_LOGIC;
+  signal JE_pin3_t : STD_LOGIC;
+  signal JE_pin4_i : STD_LOGIC;
+  signal JE_pin4_o : STD_LOGIC;
+  signal JE_pin4_t : STD_LOGIC;
+  signal JE_pin7_i : STD_LOGIC;
+  signal JE_pin7_o : STD_LOGIC;
+  signal JE_pin7_t : STD_LOGIC;
+  signal JE_pin8_i : STD_LOGIC;
+  signal JE_pin8_o : STD_LOGIC;
+  signal JE_pin8_t : STD_LOGIC;
+  signal JE_pin9_i : STD_LOGIC;
+  signal JE_pin9_o : STD_LOGIC;
+  signal JE_pin9_t : STD_LOGIC;
   signal cam_gpio_tri_i_0 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal cam_gpio_tri_io_0 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal cam_gpio_tri_o_0 : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -121,6 +177,62 @@ architecture STRUCTURE of system_wrapper is
   signal cam_iic_sda_o : STD_LOGIC;
   signal cam_iic_sda_t : STD_LOGIC;
 begin
+JE_pin10_iobuf: component IOBUF
+     port map (
+      I => JE_pin10_o,
+      IO => JE_pin10_io,
+      O => JE_pin10_i,
+      T => JE_pin10_t
+    );
+JE_pin1_iobuf: component IOBUF
+     port map (
+      I => JE_pin1_o,
+      IO => JE_pin1_io,
+      O => JE_pin1_i,
+      T => JE_pin1_t
+    );
+JE_pin2_iobuf: component IOBUF
+     port map (
+      I => JE_pin2_o,
+      IO => JE_pin2_io,
+      O => JE_pin2_i,
+      T => JE_pin2_t
+    );
+JE_pin3_iobuf: component IOBUF
+     port map (
+      I => JE_pin3_o,
+      IO => JE_pin3_io,
+      O => JE_pin3_i,
+      T => JE_pin3_t
+    );
+JE_pin4_iobuf: component IOBUF
+     port map (
+      I => JE_pin4_o,
+      IO => JE_pin4_io,
+      O => JE_pin4_i,
+      T => JE_pin4_t
+    );
+JE_pin7_iobuf: component IOBUF
+     port map (
+      I => JE_pin7_o,
+      IO => JE_pin7_io,
+      O => JE_pin7_i,
+      T => JE_pin7_t
+    );
+JE_pin8_iobuf: component IOBUF
+     port map (
+      I => JE_pin8_o,
+      IO => JE_pin8_io,
+      O => JE_pin8_i,
+      T => JE_pin8_t
+    );
+JE_pin9_iobuf: component IOBUF
+     port map (
+      I => JE_pin9_o,
+      IO => JE_pin9_io,
+      O => JE_pin9_i,
+      T => JE_pin9_t
+    );
 cam_gpio_tri_iobuf_0: component IOBUF
      port map (
       I => cam_gpio_tri_o_0(0),
@@ -165,6 +277,30 @@ system_i: component system
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
+      JE_pin10_i => JE_pin10_i,
+      JE_pin10_o => JE_pin10_o,
+      JE_pin10_t => JE_pin10_t,
+      JE_pin1_i => JE_pin1_i,
+      JE_pin1_o => JE_pin1_o,
+      JE_pin1_t => JE_pin1_t,
+      JE_pin2_i => JE_pin2_i,
+      JE_pin2_o => JE_pin2_o,
+      JE_pin2_t => JE_pin2_t,
+      JE_pin3_i => JE_pin3_i,
+      JE_pin3_o => JE_pin3_o,
+      JE_pin3_t => JE_pin3_t,
+      JE_pin4_i => JE_pin4_i,
+      JE_pin4_o => JE_pin4_o,
+      JE_pin4_t => JE_pin4_t,
+      JE_pin7_i => JE_pin7_i,
+      JE_pin7_o => JE_pin7_o,
+      JE_pin7_t => JE_pin7_t,
+      JE_pin8_i => JE_pin8_i,
+      JE_pin8_o => JE_pin8_o,
+      JE_pin8_t => JE_pin8_t,
+      JE_pin9_i => JE_pin9_i,
+      JE_pin9_o => JE_pin9_o,
+      JE_pin9_t => JE_pin9_t,
       cam_gpio_tri_i(0) => cam_gpio_tri_i_0(0),
       cam_gpio_tri_o(0) => cam_gpio_tri_o_0(0),
       cam_gpio_tri_t(0) => cam_gpio_tri_t_0(0),

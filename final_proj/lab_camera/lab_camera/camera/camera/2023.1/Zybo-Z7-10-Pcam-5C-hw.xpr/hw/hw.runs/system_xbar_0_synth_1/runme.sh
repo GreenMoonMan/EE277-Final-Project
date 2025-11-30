@@ -12,9 +12,9 @@ echo "Please update the PATH and LD_LIBRARY_PATH variables below, before executi
 exit
 
 if [ -z "$PATH" ]; then
-  PATH=C:/Xilinx/Vitis/2023.1/bin;C:/Xilinx/Vivado/2023.1/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2023.1/ids_lite/ISE/lib/nt64:C:/Xilinx/Vivado/2023.1/bin
+  PATH=Z:/Xilinx/Vitis/2023.1/bin;Z:/Xilinx/Vivado/2023.1/ids_lite/ISE/bin/nt64;Z:/Xilinx/Vivado/2023.1/ids_lite/ISE/lib/nt64:Z:/Xilinx/Vivado/2023.1/bin
 else
-  PATH=C:/Xilinx/Vitis/2023.1/bin;C:/Xilinx/Vivado/2023.1/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2023.1/ids_lite/ISE/lib/nt64:C:/Xilinx/Vivado/2023.1/bin:$PATH
+  PATH=Z:/Xilinx/Vitis/2023.1/bin;Z:/Xilinx/Vivado/2023.1/ids_lite/ISE/bin/nt64;Z:/Xilinx/Vivado/2023.1/ids_lite/ISE/lib/nt64:Z:/Xilinx/Vivado/2023.1/bin:$PATH
 fi
 export PATH
 
@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Temp/Zybo-Z7/hw/proj/hw.runs/system_xbar_0_synth_1'
+HD_PWD='Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/system_xbar_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

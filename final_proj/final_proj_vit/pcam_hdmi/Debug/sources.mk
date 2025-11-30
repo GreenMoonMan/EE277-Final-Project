@@ -24,6 +24,7 @@ ELFSIZE :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+src/PmodKYPD_v1_0/src \
 src/display_ctrl \
 src/dynclk \
 src/intc \

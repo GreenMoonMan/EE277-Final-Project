@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Tue Nov 18 21:41:20 2025
+| Date         : Sat Nov 29 18:58:49 2025
 | Host         : DESKTOP-D2NNA1U running 64-bit major release  (build 9200)
 | Command      : report_utilization -file system_wrapper_utilization_synth.rpt -pb system_wrapper_utilization_synth.pb
 | Design       : system_wrapper
@@ -92,7 +92,7 @@ Warning! LUT value is adjusted to account for LUT combining.
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |    5 |     0 |          0 |       100 |  5.00 |
+| Bonded IOB                  |   13 |     0 |          0 |       100 | 13.00 |
 | Bonded IPADs                |    0 |     0 |          0 |         2 |  0.00 |
 | Bonded IOPADs               |    0 |     0 |          0 |       130 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         2 |  0.00 |
@@ -148,8 +148,8 @@ Warning! LUT value is adjusted to account for LUT combining.
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| IBUF     |    5 |                  IO |
-| OBUFT    |    3 |                  IO |
+| IBUF     |   13 |                  IO |
+| OBUFT    |   11 |                  IO |
 +----------+------+---------------------+
 
 
@@ -173,6 +173,7 @@ Warning! LUT value is adjusted to account for LUT combining.
 | system_auto_pc_2               |    1 |
 | system_auto_pc_1               |    1 |
 | system_auto_pc_0               |    1 |
+| system_PmodKYPD_0_0            |    1 |
 | system_MIPI_D_PHY_RX_0_0       |    1 |
 | system_MIPI_CSI_2_RX_0_0       |    1 |
 | system_DVIClocking_1_0         |    1 |
