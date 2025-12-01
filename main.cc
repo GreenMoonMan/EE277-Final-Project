@@ -66,7 +66,7 @@ static const uint8_t digit_font[10][12] = {
 #define FONT_W 8
 #define FONT_H 12
 
-// Pixel color helper: B G R order as used in your buffers
+// Pixel color helper: B G R order as used in buffers
 static inline void set_pixel_bgr(uint8_t* pixel_ptr, uint8_t B, uint8_t G, uint8_t R) {
     pixel_ptr[0] = B;
     pixel_ptr[1] = G;
@@ -121,7 +121,7 @@ void overlay_number_on_slot(uint8_t* framePtr, int fb_w, int fb_h, int stride,
                             const char* text, int bottom_margin, const uint8_t colorBGR[3]) {
     size_t bytes = (size_t)fb_w * fb_h * 3;
 
-    // Make sure CPU sees the latest from DDR (if DMA just wrote it).
+    // Make sure CPU sees the latest from DDR (if DMA just wrote it)
     Xil_DCacheInvalidateRange((INTPTR)framePtr, bytes);
 
     // Draw (this overwrites background where font bit=1)
