@@ -1,6 +1,78 @@
 #include "keypad.h"
 
 
+// keypad class
+KeyEntry::KeyEntry(PmodKYPD* kypd):
+	_kypd(kypd)
+{
+	init_keypad(_kypd);
+
+	// set up initial code
+	strcpy(_code, "1234");
+}
+
+void KeyEntry::poll()
+{
+	// get keypad values
+	u16 ks = KYPD_getKeyStates(_kypd);
+	u8 key = 0;
+	u32 status = KYPD_getKeyPressed(_kypd, ks, &key);
+
+	// only update for key press
+	if (status == KYPD_SINGLE_KEY)
+	{
+		if (key == _last_key)   // prevent repeats
+			return;
+		else
+			_last_key = key;
+
+		switch(key)
+		{
+			// enter
+			case 'A':
+				xil_printf("A: enter pressed\r\n");
+				isCorrectCode();
+				break;
+			// change code
+			case 'B':
+				xil_printf("B: Change Code\r\n");
+				isCorrectCode();
+				break;
+			// clear
+			case 'C':
+				xil_printf("Code Cleared\r\n");
+				strcpy(_currCode, "");
+				break;
+
+			// appened the code
+			default:
+				char cattmp[2] = { key, '\0' };
+				strncat(_currCode, cattmp, max_code_len);
+				xil_printf("Code is now: %s\r\n", _currCode);
+		}
+	}
+
+	else if (status == KYPD_NO_KEY)
+	{
+		_last_key = 0;  // ready for next press
+	}
+}
+
+
+bool KeyEntry::isCorrectCode()
+{
+	if(strcmp(_code, _currCode) == 0)
+	{
+		xil_printf("Code Entered Correctly\r\n");
+		strcpy(_currCode, "");
+		return true;
+	}
+
+	strcpy(_currCode, "");
+	xil_printf("Code Entered Inorrectly! :(\r\n");
+	return false;
+}
+
 
 void init_keypad(PmodKYPD* kypd)
 {
@@ -28,72 +100,20 @@ void run_keypad_test(PmodKYPD* kpd)
 {
     xil_printf("\r\n===== ENTER CODE MODE =====\r\n");
     xil_printf("Press number keys to build a code.\r\n");
-    xil_printf("Press 'A' to display the code.\r\n");
-    xil_printf("Press 'D' to exit.\r\n\n");
+    xil_printf("Press 'A' to enter.\r\n");
+    xil_printf("Press 'B' to change the code.\r\n");
+    xil_printf("Press 'C' to clear the code.\r\n\n");
 
-    char code[16] = {0};
-    int idx = 0;
-    u8 last_key = 0;
+//    char code[16] = {0};
+//    int idx = 0;
+//    u8 last_key = 0;
+
+    // create key entry object
+    KeyEntry ke(kpd);
 
     while (1)
     {
-        // --- Poll keypad ---
-        u16 ks = KYPD_getKeyStates(kpd);
-        u8 key = 0;
-        u32 status = KYPD_getKeyPressed(kpd, ks, &key);
-
-        if (status == KYPD_SINGLE_KEY)
-        {
-            if (key != last_key)   // prevent repeats
-            {
-                last_key = key;
-
-                //----------------------------------------------------------
-                // 1) EXIT CONDITION : KEYPAD 'D'
-                //----------------------------------------------------------
-                if (key == 'D')
-                {
-                    xil_printf("\r\nExiting code entry mode.\r\n");
-                    break;
-                }
-
-                //----------------------------------------------------------
-                // 2) DISPLAY CODE : KEYPAD 'A'
-                //----------------------------------------------------------
-                if (key == 'A')
-                {
-                    xil_printf("\r\nEntered Code: %s\r\n", code);
-                    continue;
-                }
-
-                //----------------------------------------------------------
-                // 3) ACCEPT ONLY NUMBERS 0–9
-                //----------------------------------------------------------
-                if (key >= '0' && key <= '9')
-                {
-                    if (idx < 15)
-                    {
-                        code[idx++] = key;
-                        code[idx] = 0;   // keep null-terminated
-                        xil_printf("Added: %c  | Current Code: %s\r\n", key, code);
-                    }
-                    else
-                    {
-                        xil_printf("Code buffer full! Press 'A' to view or 'D' to exit.\r\n");
-                    }
-                }
-                else
-                {
-                    // Ignore all non-numeric keys except A/D
-                    xil_printf("Ignoring key: %c\r\n", key);
-                }
-            }
-        }
-        else if (status == KYPD_NO_KEY)
-        {
-            last_key = 0;  // ready for next press
-        }
-
+    	ke.poll();
         usleep(20000); // debounce
     }
 }

@@ -9,3 +9,27 @@ timestamp=[2025-12-02 14:43:00], mode=BUILD, duration=0:00:00.175, duration_ms=1
 timestamp=[2025-12-02 14:43:06], mode=BUILD, duration=0:00:02.797, duration_ms=2797, data={name=pcam_hdmi, configuration=Debug, clean_build=false}
 timestamp=[2025-12-02 14:43:06], mode=BUILD, duration=0:00:00.174, duration_ms=174, data={name=pcam_hdmi_system, configuration=Debug, clean_build=true}
 timestamp=[2025-12-02 14:43:12], mode=BUILD, duration=0:00:05.687, duration_ms=5687, data={name=pcam_hdmi_system, configuration=Debug, clean_build=false}
+timestamp=[2025-12-02 15:26:24], mode=BUILD, duration=0:00:00.638, duration_ms=638, data={name=pcam_hdmi, configuration=Debug, clean_build=false}
+timestamp=[2025-12-02 15:26:45], mode=BUILD, duration=0:00:00.633, duration_ms=633, data={name=pcam_hdmi, configuration=Debug, clean_build=false}
+timestamp=[2025-12-02 15:27:15], mode=BUILD, duration=0:00:00.630, duration_ms=630, data={name=pcam_hdmi, configuration=Debug, clean_build=false}
+timestamp=[2025-12-02 15:27:43], mode=BUILD, duration=0:00:00.631, duration_ms=631, data={name=pcam_hdmi, configuration=Debug, clean_build=false}
+timestamp=[2025-12-02 15:28:41], mode=BUILD, duration=0:00:00.631, duration_ms=631, data={name=pcam_hdmi, configuration=Debug, clean_build=false}
+timestamp=[2025-12-02 15:29:00], mode=BUILD, duration=0:00:00.580, duration_ms=580, data={name=pcam_hdmi, configuration=Debug, clean_build=false}
+timestamp=[2025-12-02 15:29:14], mode=BUILD, duration=0:00:00.633, duration_ms=633, data={name=pcam_hdmi, configuration=Debug, clean_build=false}
+timestamp=[2025-12-02 15:30:27], mode=BUILD, duration=0:00:01.983, duration_ms=1983, data={name=pcam_hdmi, configuration=Debug, clean_build=false}
+timestamp=[2025-12-02 15:30:33], mode=BUILD, duration=0:00:05.585, duration_ms=5585, data={name=pcam_hdmi_system, configuration=Debug, clean_build=false}
+timestamp=[2025-12-02 15:31:22], mode=PLATFORM_GENERATION, duration=0:00:04.754, duration_ms=4754, data={name=hw_pcam}
+timestamp=[2025-12-02 15:31:22], mode=BUILD, duration=0:00:00.179, duration_ms=179, data={name=pcam_hdmi, configuration=Debug, clean_build=true}
+timestamp=[2025-12-02 15:31:22], mode=BUILD, duration=0:00:00.177, duration_ms=177, data={name=pcam_hdmi_system, configuration=Debug, clean_build=true}
+timestamp=[2025-12-02 15:31:34], mode=PLATFORM_GENERATION, duration=0:00:08.975, duration_ms=8975, data={name=hw_pcam}
+timestamp=[2025-12-02 15:31:39], mode=BUILD, duration=0:00:02.887, duration_ms=2887, data={name=pcam_hdmi, configuration=Debug, clean_build=false}
+timestamp=[2025-12-02 15:31:45], mode=BUILD, duration=0:00:05.586, duration_ms=5586, data={name=pcam_hdmi_system, configuration=Debug, clean_build=false}
+timestamp=[2025-12-02 15:38:50], mode=BUILD, duration=0:00:00.633, duration_ms=633, data={name=pcam_hdmi, configuration=Debug, clean_build=false}
+timestamp=[2025-12-02 15:39:15], mode=BUILD, duration=0:00:00.882, duration_ms=882, data={name=pcam_hdmi, configuration=Debug, clean_build=false}
+timestamp=[2025-12-02 15:39:21], mode=BUILD, duration=0:00:05.588, duration_ms=5588, data={name=pcam_hdmi_system, configuration=Debug, clean_build=false}
+timestamp=[2025-12-02 15:41:56], mode=BUILD, duration=0:00:01.935, duration_ms=1935, data={name=pcam_hdmi, configuration=Debug, clean_build=false}
+timestamp=[2025-12-02 15:42:02], mode=BUILD, duration=0:00:05.589, duration_ms=5589, data={name=pcam_hdmi_system, configuration=Debug, clean_build=false}
+timestamp=[2025-12-02 15:43:55], mode=BUILD, duration=0:00:00.886, duration_ms=886, data={name=pcam_hdmi, configuration=Debug, clean_build=false}
+timestamp=[2025-12-02 15:44:01], mode=BUILD, duration=0:00:05.589, duration_ms=5589, data={name=pcam_hdmi_system, configuration=Debug, clean_build=false}
+timestamp=[2025-12-02 15:44:56], mode=BUILD, duration=0:00:00.882, duration_ms=882, data={name=pcam_hdmi, configuration=Debug, clean_build=false}
+timestamp=[2025-12-02 15:45:02], mode=BUILD, duration=0:00:05.589, duration_ms=5589, data={name=pcam_hdmi_system, configuration=Debug, clean_build=false}

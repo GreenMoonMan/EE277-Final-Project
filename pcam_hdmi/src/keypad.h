@@ -11,6 +11,24 @@
 #include "ov5640/AXI_VDMA.h"
 #include "ov5640/PS_IIC.h"
 
+
+class KeyEntry
+{
+	public:
+		KeyEntry(PmodKYPD* kypd);
+		void poll();
+
+	private:
+		PmodKYPD* _kypd;
+		static constexpr int max_code_len = 16;
+		char _code[max_code_len];
+		char _currCode[max_code_len];
+		// debounce var
+		u8 _last_key = 0;
+		// private functions
+		bool isCorrectCode();
+};
+
 void init_keypad(PmodKYPD* kypd);
 
 // KEYPAD Function Prototypes:
