@@ -1,0 +1,50 @@
+# Eclipse/Vitis IDE metadata and settings
+.metadata/
+.settings/
+.project
+.cproject
+.classpath
+*.launch
+.vscode/
+
+# Build artifacts and outputs
+bin/
+Debug*/
+Release*/
+.vitis/
+build*/
+build-vitis/
+build-vivado/
+.xscode/
+sd_card/
+*.elf
+*.elf.symbols
+*.jou
+*.log
+*.str
+
+# Hardware platform exports (commit XSA/XPFM if sharing hardware handoff)
+*.xsa
+*.xpfm
+
+# Reports and temporary files
+Reports*/
+_hw_platform/
+.xpe
+*.pb
+*.dmp
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+*~
+
+# Python/Vivado TCL if used
+__pycache__/
+*.pyo
+*.pyc
+*.ip_user_files/
+*.runs/
+*.sim/
+*.srcs/
+
