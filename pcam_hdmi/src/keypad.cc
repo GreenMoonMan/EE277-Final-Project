@@ -2,13 +2,19 @@
 
 
 // keypad class
-KeyEntry::KeyEntry(PmodKYPD* kypd):
-	_kypd(kypd)
+KeyEntry::KeyEntry(PmodKYPD* kypd, std::function<void()> accept, std::function<void()> deny):
+	_kypd(kypd), acceptFunc(accept), denyFunc(deny)
 {
 	init_keypad(_kypd);
+	strcpy(_currCode, "");
 
 	// set up initial code
 	strcpy(_code, "1234");
+}
+
+void KeyEntry::setCode(char* code)
+{
+	strncpy(_code, "1234", max_code_len);
 }
 
 void KeyEntry::poll()
@@ -31,7 +37,10 @@ void KeyEntry::poll()
 			// enter
 			case 'A':
 				xil_printf("A: enter pressed\r\n");
-				isCorrectCode();
+				if(isCorrectCode())
+					acceptFunc();
+				else
+					denyFunc();
 				break;
 			// change code
 			case 'B':
@@ -42,6 +51,12 @@ void KeyEntry::poll()
 			case 'C':
 				xil_printf("Code Cleared\r\n");
 				strcpy(_currCode, "");
+				break;
+			// misc cases, do not respond to other letters
+			case 'D':
+			case 'E':
+			case 'F':
+				xil_printf("Letters not allowed\r\n");
 				break;
 
 			// appened the code
@@ -109,7 +124,11 @@ void run_keypad_test(PmodKYPD* kpd)
 //    u8 last_key = 0;
 
     // create key entry object
-    KeyEntry ke(kpd);
+    KeyEntry ke(
+    		kpd,
+			[]() {xil_printf("You entered the right code!\r\n");},
+			[]() {xil_printf("You entered the wrong code!\r\n");}
+			);
 
     while (1)
     {

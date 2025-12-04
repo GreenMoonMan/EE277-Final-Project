@@ -46,6 +46,9 @@ int main()
 
 	xil_printf("Video init done.\r\n");
 
+	// keypad initialization
+
+
 	// -------------------- Main Menu Loop --------------------
 	while (1)
 	{
@@ -83,11 +86,17 @@ int main()
 	return 0;
 }
 
+/* ------------------------------------------------------------ */
+/*                 Function Definitions                         */
+/* ------------------------------------------------------------ */
+void snapshot_correct()
+{
 
+}
 
 
 /* ------------------------------------------------------------ */
-/*                 Function Definitions                         */
+/*          Camera Function Definitions                         */
 /* ------------------------------------------------------------ */
 
 void pipeline_mode_change(AXI_VDMA<ScuGicInterruptController>& vdma_driver, OV5640& cam, VideoOutput& vid, Resolution res, OV5640_cfg::mode_t mode)

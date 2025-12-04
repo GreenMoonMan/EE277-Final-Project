@@ -1,6 +1,8 @@
 #ifndef KEYPAD_H_
 #define KEYPAD_H_
 
+#include <functional>
+
 #include "xparameters.h"
 #include "platform/platform.h"
 #include "PmodKYPD.h"
@@ -15,10 +17,15 @@
 class KeyEntry
 {
 	public:
-		KeyEntry(PmodKYPD* kypd);
+		KeyEntry(PmodKYPD* kypd, std::function<void()> accept, std::function<void()> deny);
+		void setCode(char* code);
 		void poll();
 
 	private:
+		// accept/deny functions
+		std::function<void()> acceptFunc;
+		std::function<void()> denyFunc;
+
 		PmodKYPD* _kypd;
 		static constexpr int max_code_len = 16;
 		char _code[max_code_len];
