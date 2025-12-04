@@ -624,6 +624,10 @@ void create_snapshot(
 
 	XAxiVdma_DmaSetup readCfg = {};   // declared once, outside the switch
 
+	// constants stuff
+	const uint8_t whiteBGR[3] = {255, 255, 255};
+	int bottom_margin = 20; // pixels above bottom
+
 	// find which fifo to write to
 	switch (fifoNum)
 	{
@@ -632,6 +636,7 @@ void create_snapshot(
 			//cam.set_isp_format(OV5640_cfg::isp_format_t::ISP_RGB);
 			Xil_DCacheInvalidateRange((INTPTR)liveFrame, bytes);
 			memcpy(fifoA[indexA], liveFrame, bytes);
+
 
 			/*  Apply green hue */
 			for (u32 y = 0; y < height; y++) {
@@ -655,7 +660,7 @@ void create_snapshot(
 			}
 
 			// overlay number
-//			overlay_number_on_slot(fifoA[indexA], width, height, stride, overlayText, bottom_margin, whiteBGR);
+			overlay_number_on_slot(fifoA[indexA], width, height, stride, overlayText, bottom_margin, whiteBGR);
 
 			Xil_DCacheFlushRange((INTPTR)fifoA[indexA], bytes);
 			xil_printf("Stored at 0x%08X\r\n", (u32)fifoA[indexA]);
@@ -686,6 +691,9 @@ void create_snapshot(
 					row[x + 2] = R;
 				}
 			}
+
+			// overlay number
+			overlay_number_on_slot(fifoB[indexB], width, height, stride, overlayText, bottom_margin, whiteBGR);
 
 			Xil_DCacheFlushRange((INTPTR)fifoB[indexB], bytes);
 			xil_printf("Stored at 0x%08X\r\n", (u32)fifoB[indexB]);

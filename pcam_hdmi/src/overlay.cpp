@@ -30,7 +30,7 @@ static const uint8_t digit_font[10][12] = {
 #define FONT_H 12
 
 // Pixel color helper: B G R order as used in buffers
-static inline void set_pixel_bgr(uint8_t* pixel_ptr, uint8_t B, uint8_t G, uint8_t R) {
+inline void set_pixel_bgr(uint8_t* pixel_ptr, uint8_t B, uint8_t G, uint8_t R) {
     pixel_ptr[0] = B;
     pixel_ptr[1] = G;
     pixel_ptr[2] = R;

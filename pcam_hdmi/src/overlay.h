@@ -41,7 +41,7 @@ using namespace digilent;
 
 
 
-static inline void set_pixel_bgr(uint8_t* pixel_ptr, uint8_t B, uint8_t G, uint8_t R);
+inline void set_pixel_bgr(uint8_t* pixel_ptr, uint8_t B, uint8_t G, uint8_t R);
 void draw_char_to_frame(uint8_t* frame, int fb_width, int fb_h, int stride, int char_x, int char_y, char ch, const uint8_t colorBGR[3]);
 void draw_text_to_frame(uint8_t* frame, int fb_w, int fb_h, int stride,
                         const char* text, int bottom_margin, const uint8_t colorBGR[3]);
