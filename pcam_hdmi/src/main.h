@@ -124,6 +124,13 @@ void run_snapshot_mode(
     digilent::OV5640& cam,
     digilent::VideoOutput& vid);
 
+void create_snapshot(
+    AXI_VDMA<digilent::ScuGicInterruptController>& vdma,
+    digilent::OV5640& cam,
+    digilent::VideoOutput& vid,
+	int fifo,
+	char* overlayText);
+
 
 
 #endif /* CAMERA_DEMO_H_ */

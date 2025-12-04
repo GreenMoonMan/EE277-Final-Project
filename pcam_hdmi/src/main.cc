@@ -12,6 +12,7 @@
 
 #include "main.h"
 #include "keypad.h"
+#include "overlay.h"
 
 using namespace digilent;
 
@@ -588,4 +589,110 @@ void run_snapshot_mode(AXI_VDMA<ScuGicInterruptController>& vdma_driver,
         }
     }
 }
+
+// creates snapshot
+void create_snapshot(
+    AXI_VDMA<digilent::ScuGicInterruptController>& vdma,
+    digilent::OV5640& cam,
+    digilent::VideoOutput& vid,
+	int fifoNum,
+	char* overlayText)
+{
+	const u32 width  = 1280;
+	const u32 height = 720;
+	const u32 stride = width * 3;
+	const size_t bytes = width * height * 3;
+
+	// DDR regions
+	const u32 SNAPSHOT_A_ADDR = MEM_BASE_ADDR + 0x03000000U;
+	const u32 SNAPSHOT_B_ADDR = MEM_BASE_ADDR + 0x08000000U;
+
+	const int MAX_FRAMES = 5;
+	u8* fifoA[MAX_FRAMES];
+	u8* fifoB[MAX_FRAMES];
+
+	for (int i = 0; i < MAX_FRAMES; i++) {
+			fifoA[i] = (u8*)(SNAPSHOT_A_ADDR + i * bytes);
+			fifoB[i] = (u8*)(SNAPSHOT_B_ADDR + i * bytes);
+		}
+
+	int indexA = 0, indexB = 0;
+	int countA = 0, countB = 0;  // how many valid images are stored
+
+
+	u8* liveFrame = reinterpret_cast<u8*>(MEM_BASE_ADDR);
+
+	XAxiVdma_DmaSetup readCfg = {};   // declared once, outside the switch
+
+	// find which fifo to write to
+	switch (fifoNum)
+	{
+		case 0:
+			xil_printf("Capturing frame to FIFO A slot %d...\r\n", indexA + 1);
+			//cam.set_isp_format(OV5640_cfg::isp_format_t::ISP_RGB);
+			Xil_DCacheInvalidateRange((INTPTR)liveFrame, bytes);
+			memcpy(fifoA[indexA], liveFrame, bytes);
+
+			/*  Apply green hue */
+			for (u32 y = 0; y < height; y++) {
+				u8* row = fifoA[indexA] + y * stride;
+				for (u32 x = 0; x < width * 3; x += 3) {
+					// RGB888 order: B, G, R
+					u8 B = row[x];
+					u8 G = row[x + 1];
+					u8 R = row[x + 2];
+
+					// Green hue for FIFO A
+					// Green hue, adjusted for your hardware path (VDMA BGR → display RGB)
+					B = (u8)fmin(B * 1.8f, 255.0f);  // boost this one
+					G = (u8)(G * 0.6f);              // dim green slightly
+					R = (u8)(R * 0.6f);              // dim red slightly
+
+					row[x]     = B;
+					row[x + 1] = G;
+					row[x + 2] = R;
+				}
+			}
+
+			// overlay number
+//			overlay_number_on_slot(fifoA[indexA], width, height, stride, overlayText, bottom_margin, whiteBGR);
+
+			Xil_DCacheFlushRange((INTPTR)fifoA[indexA], bytes);
+			xil_printf("Stored at 0x%08X\r\n", (u32)fifoA[indexA]);
+			indexA = (indexA + 1) % MAX_FRAMES;
+			if (countA < MAX_FRAMES) countA++;
+			break;
+
+		case 1:
+			xil_printf("Capturing frame to FIFO B slot %d...\r\n", indexB + 1);
+			Xil_DCacheInvalidateRange((INTPTR)liveFrame, bytes);
+			memcpy(fifoB[indexB], liveFrame, bytes);
+
+			/*  Apply red  hue */
+			for (u32 y = 0; y < height; y++) {
+				u8* row = fifoB[indexB] + y * stride;
+				for (u32 x = 0; x < width * 3; x += 3) {
+					u8 B = row[x];
+					u8 G = row[x + 1];
+					u8 R = row[x + 2];
+
+					// Red hue for FIFO B
+					R = (u8)fminf(R * 1.3f, 255.0f);
+					G = (u8)(G * 0.7f);
+					B = (u8)(B * 0.7f);
+
+					row[x]     = B;
+					row[x + 1] = G;
+					row[x + 2] = R;
+				}
+			}
+
+			Xil_DCacheFlushRange((INTPTR)fifoB[indexB], bytes);
+			xil_printf("Stored at 0x%08X\r\n", (u32)fifoB[indexB]);
+			indexB = (indexB + 1) % MAX_FRAMES;
+			if (countB < MAX_FRAMES) countB++;
+		break;
+	}
+}
+
 
