@@ -6,6 +6,7 @@
 #include "ov5640/PS_GPIO.h"
 #include "ov5640/AXI_VDMA.h"
 #include "ov5640/PS_IIC.h"
+#include "xuartps.h"
 
 #include "MIPI_D_PHY_RX.h"
 #include "MIPI_CSI_2_RX.h"
@@ -50,39 +51,47 @@ int main()
 	// create the snapshot functions
 	auto acceptFunc = [&]() {
 		xil_printf("creating snapshot for correct input.\r\n");
+		usleep(20000); // give time to print out
 		create_snapshot(vdma_driver, cam, vid, 0, "1234");
 	};
 
 	auto denyFunc = [&]() {
 		xil_printf("creating snapshot for wrong input.\r\n");
+		usleep(20000); // give time to print out
 		create_snapshot(vdma_driver, cam, vid, 1, "5789");
 	};
 
 	// keypad initialization
 	KeyEntry ke(&kypd, acceptFunc, denyFunc);
 
+	xil_printf("\r\n===== MAIN MENU =====\r\n");
+	xil_printf("  1) Camera Mode\r\n");
+	xil_printf("  2) Display Mode \r\n");
+	xil_printf("  x) Exit\r\n> ");
+
+
 	// -------------------- Main Menu Loop --------------------
 	while (1)
 	{
-		xil_printf("\r\n===== MAIN MENU =====\r\n");
-		xil_printf("  1) Camera Mode\r\n");
-		xil_printf("  2) Display Mode \r\n");
-		xil_printf("  x) Exit\r\n> ");
+//		// non blocking uart read
+//		char c = 0;
+//		// Check if data is available (non-blocking)
+//		if (XUartPs_IsReceiveData(STDIN_BASEADDRESS)) {
+//		    c = XUartPs_RecvByte(STDIN_BASEADDRESS);
+//		}
+//
+//		if (c == 'x')
+//			break;
+//		else if (c == '1')
+//			run_camera_mode(vdma_driver, cam, vid);
+//		else if (c == '2')
+//		{
+//			view_snapshot_mode(vdma_driver, cam, vid);
+//		}
+//		else if(c != 0)
+//			xil_printf("Invalid selection.\r\n");
 
-		int c = getchar();
-		getchar(); // consume newline
-
-		if (c == 'x')
-			break;
-		else if (c == '1')
-			run_camera_mode(vdma_driver, cam, vid);
-		else if (c == '2')
-		{
-			view_snapshot_mode(vdma_driver, cam, vid);
-		}
-		else
-			xil_printf("Invalid selection.\r\n");
-
+		// run keypad code
 		ke.poll();
 		usleep(20000); // debounce
 	}
