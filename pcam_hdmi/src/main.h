@@ -119,7 +119,8 @@ inline void run_filters_mode(
 /**
  * @brief Snapshot mode — capture one frame from DDR and display it.
  */
-void run_snapshot_mode(
+
+void view_snapshot_mode(
     AXI_VDMA<digilent::ScuGicInterruptController>& vdma,
     digilent::OV5640& cam,
     digilent::VideoOutput& vid);

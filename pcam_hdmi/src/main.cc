@@ -26,7 +26,7 @@ int main()
 	init_platform();
 
 	//initialize  KEYPAD
-	init_keypad(&kypd);
+//	init_keypad(&kypd);
 
 
 	//********************************************
@@ -47,8 +47,19 @@ int main()
 
 	xil_printf("Video init done.\r\n");
 
-	// keypad initialization
+	// create the snapshot functions
+	auto acceptFunc = [&]() {
+		xil_printf("creating snapshot for correct input.\r\n");
+		create_snapshot(vdma_driver, cam, vid, 0, "1234");
+	};
 
+	auto denyFunc = [&]() {
+		xil_printf("creating snapshot for wrong input.\r\n");
+		create_snapshot(vdma_driver, cam, vid, 1, "5789");
+	};
+
+	// keypad initialization
+	KeyEntry ke(&kypd, acceptFunc, denyFunc);
 
 	// -------------------- Main Menu Loop --------------------
 	while (1)
@@ -56,8 +67,6 @@ int main()
 		xil_printf("\r\n===== MAIN MENU =====\r\n");
 		xil_printf("  1) Camera Mode\r\n");
 		xil_printf("  2) Display Mode \r\n");
-		xil_printf("  3) Filters Mode (not implemented)\r\n");
-		xil_printf("  4) Keypad Test Mode\r\n");
 		xil_printf("  x) Exit\r\n> ");
 
 		int c = getchar();
@@ -69,30 +78,18 @@ int main()
 			run_camera_mode(vdma_driver, cam, vid);
 		else if (c == '2')
 		{
-			//xil_printf("Display Mode coming soon...\r\n");
-			run_snapshot_mode(vdma_driver, cam, vid);
-		}
-		else if (c == '3')
-			xil_printf("Filters Mode coming soon...\r\n");
-		else if (c == '4')
-		{
-			run_keypad_test(&kypd);   // <--- NEW FEATURE ADDED HERE
+			view_snapshot_mode(vdma_driver, cam, vid);
 		}
 		else
 			xil_printf("Invalid selection.\r\n");
+
+		ke.poll();
+		usleep(20000); // debounce
 	}
 
 	cleanup_platform();
 	xil_printf("Program exited cleanly.\r\n");
 	return 0;
-}
-
-/* ------------------------------------------------------------ */
-/*                 Function Definitions                         */
-/* ------------------------------------------------------------ */
-void snapshot_correct()
-{
-
 }
 
 
@@ -360,7 +357,7 @@ void run_camera_mode(AXI_VDMA<ScuGicInterruptController>& vdma_driver,
 }
 
 
-void run_snapshot_mode(AXI_VDMA<ScuGicInterruptController>& vdma_driver,
+void view_snapshot_mode(AXI_VDMA<ScuGicInterruptController>& vdma_driver,
                        OV5640& cam,
                        VideoOutput& vid)
 {
@@ -407,10 +404,8 @@ void run_snapshot_mode(AXI_VDMA<ScuGicInterruptController>& vdma_driver,
     while (1)
     {
     	xil_printf("\r\n===== SNAPSHOT MENU =====\r\n");
-    	xil_printf("  a) Capture → FIFO A (slot %d)\r\n", indexA + 1);
-    	xil_printf("  b) Capture → FIFO B (slot %d)\r\n", indexB + 1);
-    	xil_printf("  d) Display FIFO A image\r\n");
-    	xil_printf("  e) Display FIFO B image\r\n");
+    	xil_printf("  a) Display FIFO A image\r\n");
+    	xil_printf("  b) Display FIFO B image\r\n");
     	xil_printf("  c) Resume live stream\r\n");
     	xil_printf("  q) Return to main menu\r\n");
     	xil_printf("Select an option: ");
@@ -423,160 +418,95 @@ void run_snapshot_mode(AXI_VDMA<ScuGicInterruptController>& vdma_driver,
 
         switch (key)
         {
-        case 'a':
-        	xil_printf("Capturing frame to FIFO A slot %d...\r\n", indexA + 1);
-        	//cam.set_isp_format(OV5640_cfg::isp_format_t::ISP_RGB);
-        	Xil_DCacheInvalidateRange((INTPTR)liveFrame, bytes);
-        	memcpy(fifoA[indexA], liveFrame, bytes);
+			/* ------------------ Display FIFO A ------------------ */
+			case 'a':
+			{
+				if (countA == 0) { xil_printf("\nFIFO A empty.\r\n"); break; }
 
-        	/*  Apply green hue */
-        	for (u32 y = 0; y < height; y++) {
-        	    u8* row = fifoA[indexA] + y * stride;
-        	    for (u32 x = 0; x < width * 3; x += 3) {
-        	        // RGB888 order: B, G, R
-        	        u8 B = row[x];
-        	        u8 G = row[x + 1];
-        	        u8 R = row[x + 2];
+				xil_printf("FIFO A has %d image(s). Enter index (1–%d): ", countA, countA);
+				uint8_t sel = getchar();
+				getchar();
+				sel -= '1';
 
-        	        // Green hue for FIFO A
-        	        // Green hue, adjusted for your hardware path (VDMA BGR → display RGB)
-        	        B = (u8)fmin(B * 1.8f, 255.0f);  // boost this one
-        	        G = (u8)(G * 0.6f);              // dim green slightly
-        	        R = (u8)(R * 0.6f);              // dim red slightly
+				if (sel < 0 || sel >= countA) {
+					xil_printf("\r\nInvalid index.\r\n");
+					break;
+				}
 
-        	        row[x]     = B;
-        	        row[x + 1] = G;
-        	        row[x + 2] = R;
-        	    }
-        	}
+				u8* snapshot = fifoA[sel];
+				xil_printf("\r\nDisplaying FIFO A image %d...\r\n", sel + 1);
 
-        	Xil_DCacheFlushRange((INTPTR)fifoA[indexA], bytes);
-        	xil_printf("Stored at 0x%08X\r\n", (u32)fifoA[indexA]);
-        	indexA = (indexA + 1) % MAX_FRAMES;
-        	if (countA < MAX_FRAMES) countA++;
-            break;
+				vdma_driver.resetWrite();
+				vdma_driver.resetRead();
 
-        case 'b':
-        {
-        	xil_printf("Capturing frame to FIFO B slot %d...\r\n", indexB + 1);
-        	Xil_DCacheInvalidateRange((INTPTR)liveFrame, bytes);
-        	memcpy(fifoB[indexB], liveFrame, bytes);
+				readCfg.VertSizeInput  = height;
+				readCfg.HoriSizeInput  = stride;
+				readCfg.Stride         = stride;
+				readCfg.FrameDelay     = 0;
+				readCfg.EnableCircularBuf  = 0;
+				readCfg.EnableSync     = 1;
+				readCfg.PointNum       = 0;
+				readCfg.EnableFrameCounter = 0;
+				readCfg.FixedFrameStoreAddr = 0;
+				readCfg.FrameStoreStartAddr[0] = (u32)snapshot;
 
-        	/*  Apply red  hue */
-        	for (u32 y = 0; y < height; y++) {
-        	    u8* row = fifoB[indexB] + y * stride;
-        	    for (u32 x = 0; x < width * 3; x += 3) {
-        	        u8 B = row[x];
-        	        u8 G = row[x + 1];
-        	        u8 R = row[x + 2];
+				XAxiVdma* vdma = vdma_driver.getInstance();
+				XAxiVdma_DmaConfig(vdma, XAXIVDMA_READ, &readCfg);
+				XAxiVdma_DmaSetBufferAddr(vdma, XAXIVDMA_READ, readCfg.FrameStoreStartAddr);
+				XAxiVdma_DmaStart(vdma, XAXIVDMA_READ);
 
-        	        // Red hue for FIFO B
-        	        R = (u8)fminf(R * 1.3f, 255.0f);
-        	        G = (u8)(G * 0.7f);
-        	        B = (u8)(B * 0.7f);
+				xil_printf("\nFIFO A image %d displayed.\r\n", sel + 1);
+				break;
+			}
 
-        	        row[x]     = B;
-        	        row[x + 1] = G;
-        	        row[x + 2] = R;
-        	    }
-        	}
+			/* ------------------ Display FIFO B ------------------ */
+			case 'b':
+			{
+				if (countB == 0) { xil_printf("FIFO B empty.\r\n"); break; }
 
-        	Xil_DCacheFlushRange((INTPTR)fifoB[indexB], bytes);
-        	xil_printf("Stored at 0x%08X\r\n", (u32)fifoB[indexB]);
-        	indexB = (indexB + 1) % MAX_FRAMES;
-        	if (countB < MAX_FRAMES) countB++;
-        	break;
-        }
+				xil_printf("FIFO B has %d image(s). Enter index (1–%d): ", countB, countB);
+				uint8_t sel = getchar();
+				getchar();
+				sel -= '1';
 
-        case 'c':
-            xil_printf("Resuming live stream...\r\n");
+				if (sel < 0 || sel >= countB) {
+					xil_printf("\r\nInvalid index.\r\n");
+					break;
+				}
 
-            pipeline_mode_change(vdma_driver, cam, vid, Resolution::R1280_720_60_PP, OV5640_cfg::mode_t::MODE_720P_1280_720_60fps);
-                        				xil_printf("Resolution change done.\r\n");
-            xil_printf("Live video resumed.\r\n");
-            break;
+				u8* snapshot = fifoB[sel];
+				xil_printf("\r\nDisplaying FIFO B image %d...\r\n", sel + 1);
 
-            /* ------------------ Display FIFO A ------------------ */
-                    case 'd':
-                    {
-                        if (countA == 0) { xil_printf("\nFIFO A empty.\r\n"); break; }
+				vdma_driver.resetWrite();
+				vdma_driver.resetRead();
 
-                        xil_printf("FIFO A has %d image(s). Enter index (1–%d): ", countA, countA);
-                        uint8_t sel = getchar();
-                        getchar();
-                        sel -= '1';
+				readCfg.VertSizeInput  = height;
+				readCfg.HoriSizeInput  = stride;
+				readCfg.Stride         = stride;
+				readCfg.FrameDelay     = 0;
+				readCfg.EnableCircularBuf  = 0;
+				readCfg.EnableSync     = 1;
+				readCfg.PointNum       = 0;
+				readCfg.EnableFrameCounter = 0;
+				readCfg.FixedFrameStoreAddr = 0;
+				readCfg.FrameStoreStartAddr[0] = (u32)snapshot;
 
-                        if (sel < 0 || sel >= countA) {
-                            xil_printf("\r\nInvalid index.\r\n");
-                            break;
-                        }
+				XAxiVdma* vdma = vdma_driver.getInstance();
+				XAxiVdma_DmaConfig(vdma, XAXIVDMA_READ, &readCfg);
+				XAxiVdma_DmaSetBufferAddr(vdma, XAXIVDMA_READ, readCfg.FrameStoreStartAddr);
+				XAxiVdma_DmaStart(vdma, XAXIVDMA_READ);
 
-                        u8* snapshot = fifoA[sel];
-                        xil_printf("\r\nDisplaying FIFO A image %d...\r\n", sel + 1);
+				xil_printf("\nFIFO B image %d displayed.\r\n", sel + 1);
+				break;
+			}
 
-                        vdma_driver.resetWrite();
-                        vdma_driver.resetRead();
+			case 'c':
+				xil_printf("Resuming live stream...\r\n");
 
-                        readCfg.VertSizeInput  = height;
-                        readCfg.HoriSizeInput  = stride;
-                        readCfg.Stride         = stride;
-                        readCfg.FrameDelay     = 0;
-                        readCfg.EnableCircularBuf  = 0;
-                        readCfg.EnableSync     = 1;
-                        readCfg.PointNum       = 0;
-                        readCfg.EnableFrameCounter = 0;
-                        readCfg.FixedFrameStoreAddr = 0;
-                        readCfg.FrameStoreStartAddr[0] = (u32)snapshot;
-
-                        XAxiVdma* vdma = vdma_driver.getInstance();
-                        XAxiVdma_DmaConfig(vdma, XAXIVDMA_READ, &readCfg);
-                        XAxiVdma_DmaSetBufferAddr(vdma, XAXIVDMA_READ, readCfg.FrameStoreStartAddr);
-                        XAxiVdma_DmaStart(vdma, XAXIVDMA_READ);
-
-                        xil_printf("\nFIFO A image %d displayed.\r\n", sel + 1);
-                        break;
-                    }
-
-                    /* ------------------ Display FIFO B ------------------ */
-                            case 'e':
-                            {
-                                if (countB == 0) { xil_printf("FIFO B empty.\r\n"); break; }
-
-                                xil_printf("FIFO B has %d image(s). Enter index (1–%d): ", countB, countB);
-                                uint8_t sel = getchar();
-                                getchar();
-                                sel -= '1';
-
-                                if (sel < 0 || sel >= countB) {
-                                    xil_printf("\r\nInvalid index.\r\n");
-                                    break;
-                                }
-
-                                u8* snapshot = fifoB[sel];
-                                xil_printf("\r\nDisplaying FIFO B image %d...\r\n", sel + 1);
-
-                                vdma_driver.resetWrite();
-                                vdma_driver.resetRead();
-
-                                readCfg.VertSizeInput  = height;
-                                readCfg.HoriSizeInput  = stride;
-                                readCfg.Stride         = stride;
-                                readCfg.FrameDelay     = 0;
-                                readCfg.EnableCircularBuf  = 0;
-                                readCfg.EnableSync     = 1;
-                                readCfg.PointNum       = 0;
-                                readCfg.EnableFrameCounter = 0;
-                                readCfg.FixedFrameStoreAddr = 0;
-                                readCfg.FrameStoreStartAddr[0] = (u32)snapshot;
-
-                                XAxiVdma* vdma = vdma_driver.getInstance();
-                                XAxiVdma_DmaConfig(vdma, XAXIVDMA_READ, &readCfg);
-                                XAxiVdma_DmaSetBufferAddr(vdma, XAXIVDMA_READ, readCfg.FrameStoreStartAddr);
-                                XAxiVdma_DmaStart(vdma, XAXIVDMA_READ);
-
-                                xil_printf("\nFIFO B image %d displayed.\r\n", sel + 1);
-                                break;
-                            }
+				pipeline_mode_change(vdma_driver, cam, vid, Resolution::R1280_720_60_PP, OV5640_cfg::mode_t::MODE_720P_1280_720_60fps);
+											xil_printf("Resolution change done.\r\n");
+				xil_printf("Live video resumed.\r\n");
+				break;
 
 
 
