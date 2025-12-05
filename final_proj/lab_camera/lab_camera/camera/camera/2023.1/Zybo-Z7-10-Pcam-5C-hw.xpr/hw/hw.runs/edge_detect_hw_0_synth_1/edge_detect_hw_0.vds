@@ -1,0 +1,356 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Mon Nov 17 22:53:21 2025
+# Process ID: 29216
+# Current directory: Z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/edge_detect_hw_0_synth_1
+# Command line: vivado.exe -log edge_detect_hw_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source edge_detect_hw_0.tcl
+# Log file: Z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/edge_detect_hw_0_synth_1/edge_detect_hw_0.vds
+# Journal file: Z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/edge_detect_hw_0_synth_1\vivado.jou
+# Running On: DESKTOP-D2NNA1U, OS: Windows, CPU Frequency: 3700 MHz, CPU Physical cores: 16, Host memory: 17101 MB
+#-----------------------------------------------------------
+source edge_detect_hw_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1466.945 ; gain = 160.008
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.ipdefs/repo'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'z:/EE_277/lab9/repos/src'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'Z:/Xilinx/Vivado/2023.1/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.cache/ip 
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: edge_detect_hw_0
+Command: synth_design -top edge_detect_hw_0 -part xc7z010clg400-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 21728
+WARNING: [Synth 8-6901] identifier 'PXL_D_WIDTH' is used before its declaration [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/edge_kernel.v:8]
+WARNING: [Synth 8-6901] identifier 'PXL_D_WIDTH' is used before its declaration [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/edge_kernel.v:9]
+WARNING: [Synth 8-6901] identifier 'PXL_D_WIDTH' is used before its declaration [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/edge_kernel.v:10]
+WARNING: [Synth 8-6901] identifier 'PXL_D_WIDTH' is used before its declaration [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/edge_kernel.v:11]
+WARNING: [Synth 8-6901] identifier 'PXL_D_WIDTH' is used before its declaration [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/edge_kernel.v:12]
+WARNING: [Synth 8-6901] identifier 'PXL_D_WIDTH' is used before its declaration [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/edge_kernel.v:13]
+WARNING: [Synth 8-6901] identifier 'PXL_D_WIDTH' is used before its declaration [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/edge_kernel.v:14]
+WARNING: [Synth 8-6901] identifier 'PXL_D_WIDTH' is used before its declaration [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/edge_kernel.v:15]
+WARNING: [Synth 8-6901] identifier 'PXL_D_WIDTH' is used before its declaration [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/edge_kernel.v:16]
+WARNING: [Synth 8-6901] identifier 'PXL_D_WIDTH' is used before its declaration [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/edge_kernel.v:22]
+WARNING: [Synth 8-6901] identifier 'PXL_D_WIDTH' is used before its declaration [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/intensity_kernel.v:4]
+WARNING: [Synth 8-6901] identifier 'PXL_D_WIDTH' is used before its declaration [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/intensity_kernel.v:9]
+WARNING: [Synth 8-6901] identifier 'PXL_D_WIDTH' is used before its declaration [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/intensity_kernel.v:15]
+WARNING: [Synth 8-6901] identifier 'PXL_D_WIDTH' is used before its declaration [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/stencil_buf.v:9]
+WARNING: [Synth 8-6901] identifier 'PXL_D_WIDTH' is used before its declaration [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/stencil_buf.v:10]
+WARNING: [Synth 8-6901] identifier 'PXL_D_WIDTH' is used before its declaration [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/stencil_buf.v:11]
+WARNING: [Synth 8-6901] identifier 'PXL_D_WIDTH' is used before its declaration [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/stencil_buf.v:12]
+WARNING: [Synth 8-6901] identifier 'PXL_D_WIDTH' is used before its declaration [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/stencil_buf.v:13]
+WARNING: [Synth 8-6901] identifier 'PXL_D_WIDTH' is used before its declaration [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/stencil_buf.v:14]
+WARNING: [Synth 8-6901] identifier 'PXL_D_WIDTH' is used before its declaration [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/stencil_buf.v:15]
+WARNING: [Synth 8-6901] identifier 'PXL_D_WIDTH' is used before its declaration [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/stencil_buf.v:16]
+WARNING: [Synth 8-6901] identifier 'PXL_D_WIDTH' is used before its declaration [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/stencil_buf.v:22]
+WARNING: [Synth 8-6901] identifier 'PXL_D_WIDTH' is used before its declaration [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/stencil_buf.v:23]
+WARNING: [Synth 8-6901] identifier 'PXL_D_WIDTH' is used before its declaration [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/edge_detect_hw.v:24]
+WARNING: [Synth 8-6901] identifier 'PXL_D_WIDTH' is used before its declaration [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/edge_detect_hw.v:31]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2298.465 ; gain = 412.301
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'edge_detect_hw_0' [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/synth/edge_detect_hw_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'edge_detect_hw' [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/edge_detect_hw.v:19]
+INFO: [Synth 8-6157] synthesizing module 'intensity_kernel' [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/intensity_kernel.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'intensity_kernel' (0#1) [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/intensity_kernel.v:1]
+INFO: [Synth 8-6157] synthesizing module 'stencil_buf' [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/stencil_buf.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/stencil_buf.v:47]
+INFO: [Synth 8-155] case statement is not full and has no default [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/stencil_buf.v:81]
+INFO: [Synth 8-6155] done synthesizing module 'stencil_buf' (0#1) [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/stencil_buf.v:1]
+INFO: [Synth 8-6157] synthesizing module 'edge_kernel' [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/edge_kernel.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'edge_kernel' (0#1) [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/edge_kernel.v:1]
+INFO: [Synth 8-6157] synthesizing module 'roberts_kernel' [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/roberts_kernel.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'roberts_kernel' (0#1) [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/roberts_kernel.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'edge_detect_hw' (0#1) [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/edge_detect_hw.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'edge_detect_hw_0' (0#1) [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/synth/edge_detect_hw_0.v:53]
+WARNING: [Synth 8-6014] Unused sequential element vert_cnt_reg was removed.  [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/intensity_kernel.v:105]
+WARNING: [Synth 8-6014] Unused sequential element r0_org_pixels_reg was removed.  [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/stencil_buf.v:76]
+WARNING: [Synth 8-7129] Port din0[7] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din0[6] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din0[5] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din0[4] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din0[3] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din0[2] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din0[1] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din0[0] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din3[7] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din3[6] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din3[5] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din3[4] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din3[3] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din3[2] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din3[1] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din3[0] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din4[7] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din4[6] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din4[5] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din4[4] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din4[3] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din4[2] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din4[1] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din4[0] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din5[7] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din5[6] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din5[5] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din5[4] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din5[3] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din5[2] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din5[1] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din5[0] in module roberts_kernel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_n in module edge_kernel is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2748.832 ; gain = 862.668
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2766.730 ; gain = 880.566
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2766.730 ; gain = 880.566
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.343 . Memory (MB): peak = 2766.730 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2881.422 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.565 . Memory (MB): peak = 2881.441 ; gain = 0.020
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 2881.441 ; gain = 995.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 2881.441 ; gain = 995.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 2881.441 ; gain = 995.277
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'stencil_buf'
+WARNING: [Synth 8-3936] Found unconnected internal register 'abs3_567_012_reg' and it is trimmed from '11' to '10' bits. [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/edge_kernel.v:136]
+WARNING: [Synth 8-3936] Found unconnected internal register 'abs3_247_035_reg' and it is trimmed from '11' to '10' bits. [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/edge_kernel.v:133]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    WAIT |                                0 |                               00
+                    EDGE |                                1 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'stencil_buf'
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_next_state_reg' [z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/ip/edge_detect_hw_0/stencil_buf.v:49]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 2881.441 ; gain = 995.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   17 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 2     
+	   3 Input   11 Bit       Adders := 2     
+	   2 Input   10 Bit       Adders := 7     
+	   2 Input    9 Bit       Adders := 6     
+	   3 Input    9 Bit       Adders := 2     
++---Registers : 
+	               24 Bit    Registers := 20    
+	               17 Bit    Registers := 1     
+	               16 Bit    Registers := 9     
+	               12 Bit    Registers := 1     
+	               11 Bit    Registers := 2     
+	               10 Bit    Registers := 7     
+	                9 Bit    Registers := 6     
+	                8 Bit    Registers := 2576  
+	                1 Bit    Registers := 63    
++---Muxes : 
+	   2 Input   24 Bit        Muxes := 2     
+	   4 Input   24 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 3     
+	   2 Input    9 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 10    
+	   4 Input    1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+INFO: [Synth 8-3332] Sequential element (inst/sb0/FSM_sequential_next_state_reg) is unused and will be removed from module edge_detect_hw_0.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 2881.441 ; gain = 995.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:56 ; elapsed = 00:00:58 . Memory (MB): peak = 2881.441 ; gain = 995.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 2881.441 ; gain = 995.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:59 ; elapsed = 00:01:01 . Memory (MB): peak = 2881.441 ; gain = 995.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:04 ; elapsed = 00:01:06 . Memory (MB): peak = 2881.441 ; gain = 995.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:04 ; elapsed = 00:01:06 . Memory (MB): peak = 2881.441 ; gain = 995.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:04 ; elapsed = 00:01:06 . Memory (MB): peak = 2881.441 ; gain = 995.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:04 ; elapsed = 00:01:06 . Memory (MB): peak = 2881.441 ; gain = 995.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:04 ; elapsed = 00:01:06 . Memory (MB): peak = 2881.441 ; gain = 995.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:04 ; elapsed = 00:01:06 . Memory (MB): peak = 2881.441 ; gain = 995.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++-----------------+--------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name      | RTL Name                       | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++-----------------+--------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|edge_detect_hw_0 | inst/sb0/st_buf_reg[1280][7]   | 1278   | 16    | YES          | NO                 | YES               | 0      | 640     | 
+|edge_detect_hw_0 | inst/ek0/r7_s_axis_tvalid_reg  | 8      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|edge_detect_hw_0 | inst/ek0/r7_s_axis_tuser_reg   | 8      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|edge_detect_hw_0 | inst/ek0/r7_s_axis_tlast_reg   | 8      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|edge_detect_hw_0 | inst/ik0/r4_org_pixels_reg[23] | 4      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|edge_detect_hw_0 | inst/ik0/r4_s_axis_tvalid_reg  | 5      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|edge_detect_hw_0 | inst/ik0/r4_s_axis_tuser_reg   | 5      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|edge_detect_hw_0 | inst/ik0/r4_s_axis_tlast_reg   | 5      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|edge_detect_hw_0 | inst/rk0/r6_valid_reg          | 7      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|edge_detect_hw_0 | inst/rk0/r6_user_reg           | 7      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|edge_detect_hw_0 | inst/rk0/r6_last_reg           | 7      | 1     | YES          | NO                 | YES               | 1      | 0       | 
++-----------------+--------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |CARRY4  |   109|
+|2     |LUT1    |    11|
+|3     |LUT2    |   310|
+|4     |LUT3    |    48|
+|5     |LUT4    |    86|
+|6     |LUT5    |    78|
+|7     |LUT6    |   119|
+|8     |SRL16E  |    32|
+|9     |SRLC32E |   640|
+|10    |FDCE    |   250|
+|11    |FDPE    |  1349|
+|12    |FDRE    |   222|
+|13    |FDSE    |    24|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:04 ; elapsed = 00:01:06 . Memory (MB): peak = 2881.441 ; gain = 995.277
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:40 ; elapsed = 00:01:00 . Memory (MB): peak = 2881.441 ; gain = 880.566
+Synthesis Optimization Complete : Time (s): cpu = 00:01:04 ; elapsed = 00:01:06 . Memory (MB): peak = 2881.441 ; gain = 995.277
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 2881.441 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 109 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2881.441 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: c5669926
+INFO: [Common 17-83] Releasing license: Synthesis
+37 Infos, 65 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:10 ; elapsed = 00:01:13 . Memory (MB): peak = 2881.441 ; gain = 1373.336
+INFO: [Common 17-1381] The checkpoint 'Z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/edge_detect_hw_0_synth_1/edge_detect_hw_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP edge_detect_hw_0, cache-ID = c8ab7040a78d40e6
+INFO: [Coretcl 2-1174] Renamed 5 cell refs.
+INFO: [Common 17-1381] The checkpoint 'Z:/EE_277/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/edge_detect_hw_0_synth_1/edge_detect_hw_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file edge_detect_hw_0_utilization_synth.rpt -pb edge_detect_hw_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Nov 17 22:54:51 2025...

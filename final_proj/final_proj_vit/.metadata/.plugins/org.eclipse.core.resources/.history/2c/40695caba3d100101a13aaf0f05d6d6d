@@ -1,0 +1,141 @@
+#include "keypad.h"
+
+
+// keypad class
+KeyEntry::KeyEntry(PmodKYPD* kypd, std::function<void(char*)> accept, std::function<void(char*)> deny):
+	_kypd(kypd), acceptFunc(accept), denyFunc(deny)
+{
+	init_keypad(_kypd);
+	strcpy(_currCode, "");
+
+	// set up initial code
+	strcpy(_code, "1234");
+}
+
+void KeyEntry::setCode(char* code)
+{
+	strncpy(_code, "1234", max_code_len);
+}
+
+void KeyEntry::poll()
+{
+	// get keypad values
+	u16 ks = KYPD_getKeyStates(_kypd);
+	u8 key = 0;
+	u32 status = KYPD_getKeyPressed(_kypd, ks, &key);
+
+	// only update for key press
+	if (status == KYPD_SINGLE_KEY)
+	{
+		if (key == _last_key)   // prevent repeats
+			return;
+		else
+			_last_key = key;
+
+		switch(key)
+		{
+			// enter
+			case 'A':
+				xil_printf("A: enter pressed\r\n");
+				char codecopy[max_code_len];
+				strcpy(codecopy,_currCode);
+				if(isCorrectCode())
+					acceptFunc("1234");
+				else
+					denyFunc(_currCode);
+				break;
+			// change code
+			case 'B':
+				xil_printf("B: Change Code\r\n");
+				isCorrectCode();
+				break;
+			// clear
+			case 'C':
+				xil_printf("Code Cleared\r\n");
+				strcpy(_currCode, "");
+				break;
+			// misc cases, do not respond to other letters
+			case 'D':
+			case 'E':
+			case 'F':
+				xil_printf("Letters not allowed\r\n");
+				break;
+
+			// appened the code
+			default:
+				char cattmp[2] = { key, '\0' };
+				strncat(_currCode, cattmp, max_code_len);
+				xil_printf("Code is now: %s\r\n", _currCode);
+		}
+	}
+
+	else if (status == KYPD_NO_KEY)
+	{
+		_last_key = 0;  // ready for next press
+	}
+}
+
+
+bool KeyEntry::isCorrectCode()
+{
+	if(strcmp(_code, _currCode) == 0)
+	{
+		xil_printf("Code Entered Correctly\r\n");
+		strcpy(_currCode, "");
+		return true;
+	}
+
+	strcpy(_currCode, "");
+	xil_printf("Code Entered Inorrectly! :(\r\n");
+	return false;
+}
+
+
+void init_keypad(PmodKYPD* kypd)
+{
+    // Initialize the driver (this sets base address & resets the IP)
+    KYPD_begin(kypd, XPAR_PMODKYPD_0_AXI_LITE_GPIO_BASEADDR);
+
+    // The standard 4x4 matrix layout, DO NOT modify yet
+    static u8 keyTable[16] = {
+        '0','F','E','D',
+        '7','8','9','C',
+        '4','5','6','B',
+        '1','2','3','A'
+    };
+
+    // Load the lookup table
+    KYPD_loadKeyTable(kypd, keyTable);
+
+    // 3. ENABLE ROW OUTPUTS → REQUIRED FOR ANY KEYS TO WORK
+        //Xil_Out32(kypd.GPIO_addr + 4, 0xF0);
+
+    xil_printf("Keypad initialized.\r\n");
+}
+
+void run_keypad_test(PmodKYPD* kpd)
+{
+//    xil_printf("\r\n===== ENTER CODE MODE =====\r\n");
+//    xil_printf("Press number keys to build a code.\r\n");
+//    xil_printf("Press 'A' to enter.\r\n");
+//    xil_printf("Press 'B' to change the code.\r\n");
+//    xil_printf("Press 'C' to clear the code.\r\n\n");
+//
+////    char code[16] = {0};
+////    int idx = 0;
+////    u8 last_key = 0;
+//
+//    // create key entry object
+//    KeyEntry ke(
+//    		kpd,
+//			[]() {xil_printf("You entered the right code!\r\n");},
+//			[]() {xil_printf("You entered the wrong code!\r\n");}
+//			);
+//
+//    while (1)
+//    {
+//    	ke.poll();
+//        usleep(20000); // debounce
+//    }
+}
+

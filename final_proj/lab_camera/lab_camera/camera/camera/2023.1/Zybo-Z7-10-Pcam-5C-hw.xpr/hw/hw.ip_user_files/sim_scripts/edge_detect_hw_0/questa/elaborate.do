@@ -1,0 +1,1 @@
+vopt +acc=npr -l elaborate.log +acc=npr -suppress 10016  -L xil_defaultlib -L xilinx_vip -L xpm -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -work xil_defaultlib xil_defaultlib.edge_detect_hw_0 xil_defaultlib.glbl -o edge_detect_hw_0_opt

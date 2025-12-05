@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>pcam_hdmi</name>
+	<comment>Created by Vitis v2023.1</comment>
+	<projects>
+		<project>hw_pcam</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.genmakebuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.ScannerConfigBuilder</name>
+			<triggers>full,incremental,</triggers>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.xilinx.sdx.sdk.core.SdkProjectNature</nature>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
+		<nature>org.eclipse.cdt.core.ccnature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>src/PmodKYPD_v1_0</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>src/PmodKYPD_v1_0/src</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>src/PmodKYPD_v1_0/src/Makefile</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/vivado-library/ip/Pmods/PmodKYPD_v1_0/drivers/PmodKYPD_v1_0/src/Makefile</locationURI>
+		</link>
+		<link>
+			<name>src/PmodKYPD_v1_0/src/PmodKYPD.c</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/vivado-library/ip/Pmods/PmodKYPD_v1_0/drivers/PmodKYPD_v1_0/src/PmodKYPD.c</locationURI>
+		</link>
+		<link>
+			<name>src/PmodKYPD_v1_0/src/PmodKYPD.h</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/vivado-library/ip/Pmods/PmodKYPD_v1_0/drivers/PmodKYPD_v1_0/src/PmodKYPD.h</locationURI>
+		</link>
+	</linkedResources>
+</projectDescription>

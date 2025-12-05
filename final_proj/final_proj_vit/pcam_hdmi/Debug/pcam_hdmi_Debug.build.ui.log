@@ -1,0 +1,40 @@
+2025-12-04T22:29:19.855182400255-22:29:19 **** Incremental Build of configuration Debug for project pcam_hdmi ****
+000-make all 
+000-make --no-print-directory pre-build
+000-a9-linaro-pre-build-step
+000-' '
+000-make --no-print-directory main-build
+000-'Building file: ../src/keypad.cc'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -Wall -O2 -funroll-loops -ftree-vectorize -g3 -IC:/Temp/Zybo-Z7/sw/src/pcam_hdmi/src -c -fmessage-length=0 -MT"src/keypad.o" -mcpu=cortex-a9 -mfpu=neon-vfpv3 -mfloat-abi=hard -IZ:/EE_277_proj/EE277-Final-Project/final_proj/final_proj_vit/hw_pcam/export/hw_pcam/sw/hw_pcam/standalone_domain/bspinclude/include -MMD -MP -MF"src/keypad.d" -MT"src/keypad.o" -o "src/keypad.o" "../src/keypad.cc"
+000-In file included from ../src/keypad.cc:1:
+000-../src/keypad.h: In constructor 'KeyEntry::KeyEntry(PmodKYPD*, std::function<void(char*)>, std::function<void(char*)>)':
+000/pcam_hdmi/src/keypad.h32-1-1'KeyEntry::_kypd' will be initialized after [-Wreorder]1-../src/keypad.h:32:27: warning: 'KeyEntry::_kypd' will be initialized after [-Wreorder]
+000-   32 |                 PmodKYPD* _kypd;
+000-      |                           ^~~~~
+000/pcam_hdmi/src/keypad.h29-1-1  'std::function<void(char*)> KeyEntry::acceptFunc' [-Wreorder]1-../src/keypad.h:29:44: warning:   'std::function<void(char*)> KeyEntry::acceptFunc' [-Wreorder]
+000-   29 |                 std::function<void(char*)> acceptFunc;
+000-      |                                            ^~~~~~~~~~
+000/pcam_hdmi/src/keypad.cc5-1-1  when initialized here [-Wreorder]1-../src/keypad.cc:5:1: warning:   when initialized here [-Wreorder]
+000-    5 | KeyEntry::KeyEntry(PmodKYPD* kypd, std::function<void(char*)> accept, std::function<void(char*)> deny):
+000-      | ^~~~~~~~
+000-../src/keypad.cc: In member function 'void KeyEntry::poll()':
+000/pcam_hdmi/src/keypad.cc69-1-1'char* strncat(char*, const char*, size_t)' specified bound 16 equals destination size [-Wstringop-overflow=]1-../src/keypad.cc:69:40: warning: 'char* strncat(char*, const char*, size_t)' specified bound 16 equals destination size [-Wstringop-overflow=]
+000-   69 |                                 strncat(_currCode, cattmp, max_code_len);
+000-      |                                 ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+000-'Finished building: ../src/keypad.cc'
+000-' '
+000-'Building target: pcam_hdmi.elf'
+000-'Invoking: ARM v7 g++ linker'
+000-arm-none-eabi-g++ -mcpu=cortex-a9 -mfpu=neon-vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LZ:/EE_277_proj/EE277-Final-Project/final_proj/final_proj_vit/hw_pcam/export/hw_pcam/sw/hw_pcam/standalone_domain/bsplib/lib -o "pcam_hdmi.elf"  ./src/timer_ps/timer_ps.o  ./src/platform/platform.o  ./src/ov5640/OV5640.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/PmodKYPD_v1_0/src/PmodKYPD.o  ./src/keypad.o ./src/main.o ./src/overlay.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+000-'Finished building target: pcam_hdmi.elf'
+000-' '
+000-'Invoking: ARM v7 Print Size'
+000-arm-none-eabi-size pcam_hdmi.elf  |tee "pcam_hdmi.elf.size"
+000-   text	   data	    bss	    dec	    hex	filename
+000- 641376	   3916	  29304	 674596	  a4b24	pcam_hdmi.elf
+000-'Finished building: pcam_hdmi.elf.size'
+000-' '
+00255-
+22:29:21 Build Finished (took 1s.949ms)
+

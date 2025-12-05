@@ -1,0 +1,12 @@
+verilog xil_defaultlib --include "Z:/Xilinx/Vivado/2023.1/data/xilinx_vip/include" \
+"../../../../hw.gen/sources_1/ip/edge_detect_hw_0/edge_kernel.v" \
+"../../../../hw.gen/sources_1/ip/edge_detect_hw_0/intensity_kernel.v" \
+"../../../../hw.gen/sources_1/ip/edge_detect_hw_0/roberts_kernel.v" \
+"../../../../hw.gen/sources_1/ip/edge_detect_hw_0/stencil_buf.v" \
+"../../../../hw.gen/sources_1/ip/edge_detect_hw_0/edge_detect_hw.v" \
+"../../../../hw.gen/sources_1/ip/edge_detect_hw_0/sim/edge_detect_hw_0.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
