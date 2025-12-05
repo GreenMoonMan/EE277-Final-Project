@@ -2,7 +2,7 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
---Date        : Sat Nov 29 18:48:52 2025
+--Date        : Wed Dec  3 21:16:08 2025
 --Host        : DESKTOP-D2NNA1U running 64-bit major release  (build 9200)
 --Command     : generate_target system.bd
 --Design      : system
@@ -3082,10 +3082,10 @@ entity system is
     hdmi_tx_clk_p : out STD_LOGIC;
     hdmi_tx_data_n : out STD_LOGIC_VECTOR ( 2 downto 0 );
     hdmi_tx_data_p : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    sw : in STD_LOGIC_VECTOR ( 1 downto 0 )
+    sw : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of system : entity is "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=34,numReposBlks=21,numNonXlnxBlks=6,numHierBlks=13,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of system : entity is "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=34,numReposBlks=21,numNonXlnxBlks=7,numHierBlks=13,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of system : entity is "system.hwdef";
 end system;
@@ -3689,23 +3689,6 @@ architecture STRUCTURE of system is
     fsync_out : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component system_vtg_0;
-  component system_edge_detect_hw_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    rst_n : in STD_LOGIC;
-    s_axis_tdata : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    s_axis_tvalid : in STD_LOGIC;
-    s_axis_tuser : in STD_LOGIC;
-    s_axis_tlast : in STD_LOGIC;
-    s_axis_tready : out STD_LOGIC;
-    m_axis_tdata : out STD_LOGIC_VECTOR ( 23 downto 0 );
-    m_axis_tvalid : out STD_LOGIC;
-    m_axis_tuser : out STD_LOGIC;
-    m_axis_tlast : out STD_LOGIC;
-    m_axis_tready : in STD_LOGIC;
-    hwsw_sel : in STD_LOGIC_VECTOR ( 1 downto 0 )
-  );
-  end component system_edge_detect_hw_0_0;
   component system_PmodKYPD_0_0 is
   port (
     AXI_LITE_GPIO_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
@@ -3753,6 +3736,23 @@ architecture STRUCTURE of system is
     s_axi_aresetn : in STD_LOGIC
   );
   end component system_PmodKYPD_0_0;
+  component system_edge_detect_hw_1_0 is
+  port (
+    clk : in STD_LOGIC;
+    rst_n : in STD_LOGIC;
+    s_axis_tdata : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    s_axis_tvalid : in STD_LOGIC;
+    s_axis_tuser : in STD_LOGIC;
+    s_axis_tlast : in STD_LOGIC;
+    s_axis_tready : out STD_LOGIC;
+    m_axis_tdata : out STD_LOGIC_VECTOR ( 23 downto 0 );
+    m_axis_tvalid : out STD_LOGIC;
+    m_axis_tuser : out STD_LOGIC;
+    m_axis_tlast : out STD_LOGIC;
+    m_axis_tready : in STD_LOGIC;
+    hwsw_sel : in STD_LOGIC
+  );
+  end component system_edge_detect_hw_1_0;
   signal AXI_BayerToRGB_0_AXI_Stream_Master_TDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal AXI_BayerToRGB_0_AXI_Stream_Master_TLAST : STD_LOGIC;
   signal AXI_BayerToRGB_0_AXI_Stream_Master_TREADY : STD_LOGIC;
@@ -3887,12 +3887,12 @@ architecture STRUCTURE of system is
   signal dphy_data_lp_p_1 : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal dphy_hs_clock_1_CLK_N : STD_LOGIC;
   signal dphy_hs_clock_1_CLK_P : STD_LOGIC;
-  signal edge_detect_hw_0_m_axis_TDATA : STD_LOGIC_VECTOR ( 23 downto 0 );
-  signal edge_detect_hw_0_m_axis_TLAST : STD_LOGIC;
-  signal edge_detect_hw_0_m_axis_TREADY : STD_LOGIC;
-  signal edge_detect_hw_0_m_axis_TUSER : STD_LOGIC;
-  signal edge_detect_hw_0_m_axis_TVALID : STD_LOGIC;
-  signal hwsw_sel_0_1 : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal edge_detect_hw_1_m_axis_TDATA : STD_LOGIC_VECTOR ( 23 downto 0 );
+  signal edge_detect_hw_1_m_axis_TLAST : STD_LOGIC;
+  signal edge_detect_hw_1_m_axis_TREADY : STD_LOGIC;
+  signal edge_detect_hw_1_m_axis_TUSER : STD_LOGIC;
+  signal edge_detect_hw_1_m_axis_TVALID : STD_LOGIC;
+  signal hwsw_sel_0_1 : STD_LOGIC;
   signal mm_clk_150 : STD_LOGIC;
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal processing_system7_0_DDR_BA : STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -4293,7 +4293,7 @@ begin
   hdmi_tx_clk_p <= rgb2dvi_0_TMDS_CLK_P;
   hdmi_tx_data_n(2 downto 0) <= rgb2dvi_0_TMDS_DATA_N(2 downto 0);
   hdmi_tx_data_p(2 downto 0) <= rgb2dvi_0_TMDS_DATA_P(2 downto 0);
-  hwsw_sel_0_1(1 downto 0) <= sw(1 downto 0);
+  hwsw_sel_0_1 <= sw;
   processing_system7_0_GPIO_0_TRI_I(0) <= cam_gpio_tri_i(0);
   processing_system7_0_IIC_0_SCL_I <= cam_iic_scl_i;
   processing_system7_0_IIC_0_SDA_I <= cam_iic_sda_i;
@@ -4679,12 +4679,12 @@ axi_vdma_0: component system_axi_vdma_0_0
       s_axi_lite_wready => ps7_0_axi_periph_M00_AXI_WREADY,
       s_axi_lite_wvalid => ps7_0_axi_periph_M00_AXI_WVALID(0),
       s_axis_s2mm_aclk => mm_clk_150,
-      s_axis_s2mm_tdata(23 downto 0) => edge_detect_hw_0_m_axis_TDATA(23 downto 0),
+      s_axis_s2mm_tdata(23 downto 0) => edge_detect_hw_1_m_axis_TDATA(23 downto 0),
       s_axis_s2mm_tkeep(2 downto 0) => B"111",
-      s_axis_s2mm_tlast => edge_detect_hw_0_m_axis_TLAST,
-      s_axis_s2mm_tready => edge_detect_hw_0_m_axis_TREADY,
-      s_axis_s2mm_tuser(0) => edge_detect_hw_0_m_axis_TUSER,
-      s_axis_s2mm_tvalid => edge_detect_hw_0_m_axis_TVALID
+      s_axis_s2mm_tlast => edge_detect_hw_1_m_axis_TLAST,
+      s_axis_s2mm_tready => edge_detect_hw_1_m_axis_TREADY,
+      s_axis_s2mm_tuser(0) => edge_detect_hw_1_m_axis_TUSER,
+      s_axis_s2mm_tvalid => edge_detect_hw_1_m_axis_TVALID
     );
 clk_wiz_0: component system_clk_wiz_0_0
      port map (
@@ -4694,15 +4694,15 @@ clk_wiz_0: component system_clk_wiz_0_0
       clk_out3 => ref_clk_200,
       locked => clk_wiz_0_locked
     );
-edge_detect_hw_0: component system_edge_detect_hw_0_0
+img_sharp_kern_0: component system_edge_detect_hw_1_0
      port map (
       clk => mm_clk_150,
-      hwsw_sel(1 downto 0) => hwsw_sel_0_1(1 downto 0),
-      m_axis_tdata(23 downto 0) => edge_detect_hw_0_m_axis_TDATA(23 downto 0),
-      m_axis_tlast => edge_detect_hw_0_m_axis_TLAST,
-      m_axis_tready => edge_detect_hw_0_m_axis_TREADY,
-      m_axis_tuser => edge_detect_hw_0_m_axis_TUSER,
-      m_axis_tvalid => edge_detect_hw_0_m_axis_TVALID,
+      hwsw_sel => hwsw_sel_0_1,
+      m_axis_tdata(23 downto 0) => edge_detect_hw_1_m_axis_TDATA(23 downto 0),
+      m_axis_tlast => edge_detect_hw_1_m_axis_TLAST,
+      m_axis_tready => edge_detect_hw_1_m_axis_TREADY,
+      m_axis_tuser => edge_detect_hw_1_m_axis_TUSER,
+      m_axis_tvalid => edge_detect_hw_1_m_axis_TVALID,
       rst_n => rst_clk_wiz_0_50M_peripheral_aresetn(0),
       s_axis_tdata(23 downto 0) => AXI_GammaCorrection_1_m_axis_video_TDATA(23 downto 0),
       s_axis_tlast => AXI_GammaCorrection_1_m_axis_video_TLAST,

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Nov 29 18:49:01 2025" VIVADOVERSION="2023.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Dec  3 21:16:46 2025" VIVADOVERSION="2023.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:zybo-z7-10:part0:1.1" DEVICE="7z010" NAME="system" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -334,9 +334,9 @@
         <CONNECTION INSTANCE="MIPI_D_PHY_RX_0" PORT="dphy_data_lp_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="1" NAME="sw" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_sw">
+    <PORT DIR="I" NAME="sw" SIGIS="undef" SIGNAME="External_Ports_sw">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="edge_detect_hw_0" PORT="hwsw_sel"/>
+        <CONNECTION INSTANCE="img_sharp_kern_0" PORT="hwsw_sel"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -623,27 +623,27 @@
         </PORT>
         <PORT DIR="I" NAME="m_axis_video_tready" SIGIS="undef" SIGNAME="AXI_GammaCorrection_1_m_axis_video_tready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="edge_detect_hw_0" PORT="s_axis_tready"/>
+            <CONNECTION INSTANCE="img_sharp_kern_0" PORT="s_axis_tready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="23" NAME="m_axis_video_tdata" RIGHT="0" SIGIS="undef" SIGNAME="AXI_GammaCorrection_1_m_axis_video_tdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="edge_detect_hw_0" PORT="s_axis_tdata"/>
+            <CONNECTION INSTANCE="img_sharp_kern_0" PORT="s_axis_tdata"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="m_axis_video_tvalid" SIGIS="undef" SIGNAME="AXI_GammaCorrection_1_m_axis_video_tvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="edge_detect_hw_0" PORT="s_axis_tvalid"/>
+            <CONNECTION INSTANCE="img_sharp_kern_0" PORT="s_axis_tvalid"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="m_axis_video_tuser" SIGIS="undef" SIGNAME="AXI_GammaCorrection_1_m_axis_video_tuser">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="edge_detect_hw_0" PORT="s_axis_tuser"/>
+            <CONNECTION INSTANCE="img_sharp_kern_0" PORT="s_axis_tuser"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="m_axis_video_tlast" SIGIS="undef" SIGNAME="AXI_GammaCorrection_1_m_axis_video_tlast">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="edge_detect_hw_0" PORT="s_axis_tlast"/>
+            <CONNECTION INSTANCE="img_sharp_kern_0" PORT="s_axis_tlast"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="50000000" DIR="I" NAME="AxiLiteClk" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out1">
@@ -4977,28 +4977,28 @@
         </PORT>
         <PORT DIR="I" LEFT="23" NAME="s_axis_s2mm_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_vdma_0_s_axis_s2mm_tdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="edge_detect_hw_0" PORT="m_axis_tdata"/>
+            <CONNECTION INSTANCE="img_sharp_kern_0" PORT="m_axis_tdata"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="2" NAME="s_axis_s2mm_tkeep" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" LEFT="0" NAME="s_axis_s2mm_tuser" RIGHT="0" SIGIS="undef" SIGNAME="axi_vdma_0_s_axis_s2mm_tuser">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="edge_detect_hw_0" PORT="m_axis_tuser"/>
+            <CONNECTION INSTANCE="img_sharp_kern_0" PORT="m_axis_tuser"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="s_axis_s2mm_tvalid" SIGIS="undef" SIGNAME="axi_vdma_0_s_axis_s2mm_tvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="edge_detect_hw_0" PORT="m_axis_tvalid"/>
+            <CONNECTION INSTANCE="img_sharp_kern_0" PORT="m_axis_tvalid"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="s_axis_s2mm_tready" SIGIS="undef" SIGNAME="axi_vdma_0_s_axis_s2mm_tready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="edge_detect_hw_0" PORT="m_axis_tready"/>
+            <CONNECTION INSTANCE="img_sharp_kern_0" PORT="m_axis_tready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="s_axis_s2mm_tlast" SIGIS="undef" SIGNAME="axi_vdma_0_s_axis_s2mm_tlast">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="edge_detect_hw_0" PORT="m_axis_tlast"/>
+            <CONNECTION INSTANCE="img_sharp_kern_0" PORT="m_axis_tlast"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="mm2s_introut" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT" SIGNAME="axi_vdma_0_mm2s_introut">
@@ -5186,7 +5186,7 @@
             <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_mm2s_tvalid"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="edge_detect_hw_0_m_axis" NAME="S_AXIS_S2MM" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="img_sharp_kern_0_m_axis" NAME="S_AXIS_S2MM" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="3"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
@@ -5844,7 +5844,7 @@
             <CONNECTION INSTANCE="axi_vdma_0" PORT="m_axi_s2mm_aclk"/>
             <CONNECTION INSTANCE="axi_vdma_0" PORT="s_axis_s2mm_aclk"/>
             <CONNECTION INSTANCE="v_axi4s_vid_out_0" PORT="aclk"/>
-            <CONNECTION INSTANCE="edge_detect_hw_0" PORT="clk"/>
+            <CONNECTION INSTANCE="img_sharp_kern_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="200000000" DIR="O" NAME="clk_out3" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out3">
@@ -5860,11 +5860,11 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/edge_detect_hw_0" HWVERSION="1.0" INSTANCE="edge_detect_hw_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="edge_detect_hw" VLNV="xilinx.com:user:edge_detect_hw:1.0">
+    <MODULE COREREVISION="6" FULLNAME="/img_sharp_kern_0" HWVERSION="1.0" INSTANCE="img_sharp_kern_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="edge_detect_hw" VLNV="Arm.com:user:edge_detect_hw:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="PXL_D_WIDTH" VALUE="8"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_edge_detect_hw_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_edge_detect_hw_1_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -5928,14 +5928,14 @@
             <CONNECTION INSTANCE="axi_vdma_0" PORT="s_axis_s2mm_tready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="hwsw_sel" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_sw">
+        <PORT DIR="I" NAME="hwsw_sel" SIGIS="undef" SIGNAME="External_Ports_sw">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="sw"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="edge_detect_hw_0_m_axis" NAME="m_axis" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="img_sharp_kern_0_m_axis" NAME="m_axis" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="3"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
@@ -9463,9 +9463,9 @@
             <CONNECTION INSTANCE="v_axi4s_vid_out_0" PORT="aresetn"/>
             <CONNECTION INSTANCE="video_dynclk" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="vtg" PORT="s_axi_aresetn"/>
-            <CONNECTION INSTANCE="edge_detect_hw_0" PORT="rst_n"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_ARESETN"/>
             <CONNECTION INSTANCE="PmodKYPD_0" PORT="s_axi_aresetn"/>
+            <CONNECTION INSTANCE="img_sharp_kern_0" PORT="rst_n"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1764471452" LaunchIncrCheckpoint="$PPRDIR/../../proj/hw.srcs/utils_1/imports/synth_1/system_wrapper.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1764825414" LaunchIncrCheckpoint="$PPRDIR/../../proj/hw.srcs/utils_1/imports/synth_1/system_wrapper.dcp">
   <File Type="PA-TCL" Name="system_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="system_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="system_wrapper_reports.tcl"/>
@@ -110,7 +110,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="system_clk_wiz_0_0"/>
@@ -128,6 +130,6 @@
   <BlockFileSet Type="BlockSrcs" Name="system_AXI_GammaCorrection_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_MIPI_CSI_2_RX_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_DVIClocking_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_edge_detect_hw_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_PmodKYPD_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_edge_detect_hw_1_0"/>
 </GenRun>

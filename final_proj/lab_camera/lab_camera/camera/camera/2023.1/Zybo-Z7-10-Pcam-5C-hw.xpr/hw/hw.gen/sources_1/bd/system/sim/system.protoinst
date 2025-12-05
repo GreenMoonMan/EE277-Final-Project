@@ -526,10 +526,11 @@
 						"WVALID": { "actual": "s_axi_lite_wvalid"}
 					}
 				},
-				"/edge_detect_hw_0/m_axis": {
+				"/img_sharp_kern_0/m_axis": {
 					"interface": "xilinx.com:interface:axis:1.0",
 					"ports": {
 						"ACLK": { "actual": "clk"},
+						"ARESETN": { "actual": "rst_n"},
 						"TDATA": { "actual": "m_axis_tdata"},
 						"TLAST": { "actual": "m_axis_tlast"},
 						"TREADY": { "actual": "m_axis_tready"},
@@ -537,10 +538,11 @@
 						"TVALID": { "actual": "m_axis_tvalid"}
 					}
 				},
-				"/edge_detect_hw_0/s_axis": {
+				"/img_sharp_kern_0/s_axis": {
 					"interface": "xilinx.com:interface:axis:1.0",
 					"ports": {
 						"ACLK": { "actual": "clk"},
+						"ARESETN": { "actual": "rst_n"},
 						"TDATA": { "actual": "s_axis_tdata"},
 						"TLAST": { "actual": "s_axis_tlast"},
 						"TREADY": { "actual": "s_axis_tready"},

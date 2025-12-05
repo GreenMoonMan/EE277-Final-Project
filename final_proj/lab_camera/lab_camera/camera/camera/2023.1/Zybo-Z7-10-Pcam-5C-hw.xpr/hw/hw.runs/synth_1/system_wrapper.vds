@@ -3,8 +3,8 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Sat Nov 29 18:57:35 2025
-# Process ID: 29848
+# Start of session at: Wed Dec  3 21:18:36 2025
+# Process ID: 20672
 # Current directory: Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1
 # Command line: vivado.exe -log system_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_wrapper.tcl
 # Log file: Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/system_wrapper.vds
@@ -12,9 +12,10 @@
 # Running On: DESKTOP-D2NNA1U, OS: Windows, CPU Frequency: 3700 MHz, CPU Physical cores: 16, Host memory: 17101 MB
 #-----------------------------------------------------------
 source system_wrapper.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1469.223 ; gain = 161.574
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1467.125 ; gain = 158.863
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.ipdefs/repo'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'z:/EE_277/repos/vivado-library/ip/edge_detect_hw'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'z:/EE_277/lab9/repos/src'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'z:/EE_277_proj/EE277-Final-Project/vivado-library'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'Z:/Xilinx/Vivado/2023.1/data/ip'.
@@ -23,7 +24,7 @@ WARNING: [IP_Flow 19-1663] Duplicate IP found for 'digilentinc.com:ip:MIPI_D_PHY
 WARNING: [IP_Flow 19-4830] Duplicate Interface found for 'digilentinc.com:interface:tmds:1.0'. The one found in location 'z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.ipdefs/repo/vivado-library/if/tmds_v1_0/tmds.xml' will take precedence over the same Interface in location 'z:/EE_277_proj/EE277-Final-Project/vivado-library/if/tmds_v1_0/tmds.xml'
 WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
 Current IP cache path is z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.cache/ip 
-add_files: Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 1578.234 ; gain = 80.293
+add_files: Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 1576.051 ; gain = 82.223
 Command: read_checkpoint -auto_incremental -incremental Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/proj/hw.srcs/utils_1/imports/synth_1/system_wrapper.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/proj/hw.srcs/utils_1/imports/synth_1/system_wrapper.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -36,9 +37,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 28068
+INFO: [Synth 8-7075] Helper process launched with PID 8248
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2393.324 ; gain = 409.777
+Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2393.422 ; gain = 410.070
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'system_wrapper' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/hdl/system_wrapper.vhd:65]
 INFO: [Synth 8-3491] module 'IOBUF' declared at 'Z:/Xilinx/Vivado/2023.1/scripts/rt/data/unisim_comp.v:76334' bound to instance 'JE_pin10_iobuf' of component 'IOBUF' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/hdl/system_wrapper.vhd:180]
@@ -56,38 +57,38 @@ INFO: [Synth 8-3491] module 'IOBUF' declared at 'Z:/Xilinx/Vivado/2023.1/scripts
 INFO: [Synth 8-3491] module 'IOBUF' declared at 'Z:/Xilinx/Vivado/2023.1/scripts/rt/data/unisim_comp.v:76334' bound to instance 'cam_iic_sda_iobuf' of component 'IOBUF' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/hdl/system_wrapper.vhd:250]
 INFO: [Synth 8-3491] module 'system' declared at 'z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:3017' bound to instance 'system_i' of component 'system' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/hdl/system_wrapper.vhd:257]
 INFO: [Synth 8-638] synthesizing module 'system' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:3093]
-INFO: [Synth 8-3491] module 'system_AXI_BayerToRGB_0_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_AXI_BayerToRGB_0_0_stub.vhdl:6' bound to instance 'AXI_BayerToRGB_0' of component 'system_AXI_BayerToRGB_0_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:4300]
-INFO: [Synth 8-638] synthesizing module 'system_AXI_BayerToRGB_0_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_AXI_BayerToRGB_0_0_stub.vhdl:24]
-INFO: [Synth 8-3491] module 'system_AXI_GammaCorrection_1_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_AXI_GammaCorrection_1_0_stub.vhdl:6' bound to instance 'AXI_GammaCorrection_1' of component 'system_AXI_GammaCorrection_1_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:4315]
-INFO: [Synth 8-638] synthesizing module 'system_AXI_GammaCorrection_1_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_AXI_GammaCorrection_1_0_stub.vhdl:45]
-INFO: [Synth 8-3491] module 'system_DVIClocking_1_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_DVIClocking_1_0_stub.vhdl:6' bound to instance 'DVIClocking_1' of component 'system_DVIClocking_1_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:4351]
-INFO: [Synth 8-638] synthesizing module 'system_DVIClocking_1_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_DVIClocking_1_0_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'system_MIPI_CSI_2_RX_0_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_MIPI_CSI_2_RX_0_0_stub.vhdl:6' bound to instance 'MIPI_CSI_2_RX_0' of component 'system_MIPI_CSI_2_RX_0_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:4359]
-INFO: [Synth 8-638] synthesizing module 'system_MIPI_CSI_2_RX_0_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_MIPI_CSI_2_RX_0_0_stub.vhdl:63]
-INFO: [Synth 8-3491] module 'system_MIPI_D_PHY_RX_0_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_MIPI_D_PHY_RX_0_0_stub.vhdl:6' bound to instance 'MIPI_D_PHY_RX_0' of component 'system_MIPI_D_PHY_RX_0_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:4413]
-INFO: [Synth 8-638] synthesizing module 'system_MIPI_D_PHY_RX_0_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_MIPI_D_PHY_RX_0_0_stub.vhdl:89]
-INFO: [Synth 8-3491] module 'system_PmodKYPD_0_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_PmodKYPD_0_0_stub.vhdl:6' bound to instance 'PmodKYPD_0' of component 'system_PmodKYPD_0_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:4493]
-INFO: [Synth 8-638] synthesizing module 'system_PmodKYPD_0_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_PmodKYPD_0_0_stub.vhdl:55]
+INFO: [Synth 8-3491] module 'system_AXI_BayerToRGB_0_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_AXI_BayerToRGB_0_0_stub.vhdl:6' bound to instance 'AXI_BayerToRGB_0' of component 'system_AXI_BayerToRGB_0_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:4300]
+INFO: [Synth 8-638] synthesizing module 'system_AXI_BayerToRGB_0_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_AXI_BayerToRGB_0_0_stub.vhdl:24]
+INFO: [Synth 8-3491] module 'system_AXI_GammaCorrection_1_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_AXI_GammaCorrection_1_0_stub.vhdl:6' bound to instance 'AXI_GammaCorrection_1' of component 'system_AXI_GammaCorrection_1_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:4315]
+INFO: [Synth 8-638] synthesizing module 'system_AXI_GammaCorrection_1_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_AXI_GammaCorrection_1_0_stub.vhdl:45]
+INFO: [Synth 8-3491] module 'system_DVIClocking_1_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_DVIClocking_1_0_stub.vhdl:6' bound to instance 'DVIClocking_1' of component 'system_DVIClocking_1_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:4351]
+INFO: [Synth 8-638] synthesizing module 'system_DVIClocking_1_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_DVIClocking_1_0_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'system_MIPI_CSI_2_RX_0_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_MIPI_CSI_2_RX_0_0_stub.vhdl:6' bound to instance 'MIPI_CSI_2_RX_0' of component 'system_MIPI_CSI_2_RX_0_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:4359]
+INFO: [Synth 8-638] synthesizing module 'system_MIPI_CSI_2_RX_0_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_MIPI_CSI_2_RX_0_0_stub.vhdl:63]
+INFO: [Synth 8-3491] module 'system_MIPI_D_PHY_RX_0_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_MIPI_D_PHY_RX_0_0_stub.vhdl:6' bound to instance 'MIPI_D_PHY_RX_0' of component 'system_MIPI_D_PHY_RX_0_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:4413]
+INFO: [Synth 8-638] synthesizing module 'system_MIPI_D_PHY_RX_0_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_MIPI_D_PHY_RX_0_0_stub.vhdl:89]
+INFO: [Synth 8-3491] module 'system_PmodKYPD_0_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_PmodKYPD_0_0_stub.vhdl:6' bound to instance 'PmodKYPD_0' of component 'system_PmodKYPD_0_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:4493]
+INFO: [Synth 8-638] synthesizing module 'system_PmodKYPD_0_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_PmodKYPD_0_0_stub.vhdl:55]
 INFO: [Synth 8-638] synthesizing module 'system_axi_mem_intercon_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:1486]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_1P403ZT' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:1307]
-INFO: [Synth 8-3491] module 'system_auto_pc_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_auto_pc_0_stub.vhdl:6' bound to instance 'auto_pc' of component 'system_auto_pc_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:1406]
-INFO: [Synth 8-638] synthesizing module 'system_auto_pc_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_auto_pc_0_stub.vhdl:45]
+INFO: [Synth 8-3491] module 'system_auto_pc_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_auto_pc_0_stub.vhdl:6' bound to instance 'auto_pc' of component 'system_auto_pc_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:1406]
+INFO: [Synth 8-638] synthesizing module 'system_auto_pc_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_auto_pc_0_stub.vhdl:45]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_1P403ZT' (0#1) [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:1307]
 INFO: [Synth 8-256] done synthesizing module 'system_axi_mem_intercon_0' (0#1) [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:1486]
 INFO: [Synth 8-638] synthesizing module 'system_axi_mem_intercon_1_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:1637]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_1AIV7DJ' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:1106]
-INFO: [Synth 8-3491] module 'system_auto_pc_1' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_auto_pc_1_stub.vhdl:6' bound to instance 'auto_pc' of component 'system_auto_pc_1' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:1223]
-INFO: [Synth 8-638] synthesizing module 'system_auto_pc_1' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_auto_pc_1_stub.vhdl:51]
+INFO: [Synth 8-3491] module 'system_auto_pc_1' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_auto_pc_1_stub.vhdl:6' bound to instance 'auto_pc' of component 'system_auto_pc_1' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:1223]
+INFO: [Synth 8-638] synthesizing module 'system_auto_pc_1' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_auto_pc_1_stub.vhdl:51]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_1AIV7DJ' (0#1) [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:1106]
 INFO: [Synth 8-256] done synthesizing module 'system_axi_mem_intercon_1_0' (0#1) [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:1637]
-INFO: [Synth 8-3491] module 'system_axi_vdma_0_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_axi_vdma_0_0_stub.vhdl:6' bound to instance 'axi_vdma_0' of component 'system_axi_vdma_0_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:4619]
-INFO: [Synth 8-638] synthesizing module 'system_axi_vdma_0_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_axi_vdma_0_0_stub.vhdl:79]
-INFO: [Synth 8-3491] module 'system_clk_wiz_0_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_clk_wiz_0_0_stub.vhdl:6' bound to instance 'clk_wiz_0' of component 'system_clk_wiz_0_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:4689]
-INFO: [Synth 8-638] synthesizing module 'system_clk_wiz_0_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_clk_wiz_0_0_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'system_edge_detect_hw_0_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_edge_detect_hw_0_0_stub.vhdl:6' bound to instance 'edge_detect_hw_0' of component 'system_edge_detect_hw_0_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:4697]
-INFO: [Synth 8-638] synthesizing module 'system_edge_detect_hw_0_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_edge_detect_hw_0_0_stub.vhdl:25]
-INFO: [Synth 8-3491] module 'system_processing_system7_0_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_processing_system7_0_0_stub.vhdl:6' bound to instance 'processing_system7_0' of component 'system_processing_system7_0_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:4713]
-INFO: [Synth 8-638] synthesizing module 'system_processing_system7_0_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_processing_system7_0_0_stub.vhdl:178]
+INFO: [Synth 8-3491] module 'system_axi_vdma_0_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_axi_vdma_0_0_stub.vhdl:6' bound to instance 'axi_vdma_0' of component 'system_axi_vdma_0_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:4619]
+INFO: [Synth 8-638] synthesizing module 'system_axi_vdma_0_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_axi_vdma_0_0_stub.vhdl:79]
+INFO: [Synth 8-3491] module 'system_clk_wiz_0_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_clk_wiz_0_0_stub.vhdl:6' bound to instance 'clk_wiz_0' of component 'system_clk_wiz_0_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:4689]
+INFO: [Synth 8-638] synthesizing module 'system_clk_wiz_0_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_clk_wiz_0_0_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'system_edge_detect_hw_1_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_edge_detect_hw_1_0_stub.vhdl:6' bound to instance 'img_sharp_kern_0' of component 'system_edge_detect_hw_1_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:4697]
+INFO: [Synth 8-638] synthesizing module 'system_edge_detect_hw_1_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_edge_detect_hw_1_0_stub.vhdl:25]
+INFO: [Synth 8-3491] module 'system_processing_system7_0_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_processing_system7_0_0_stub.vhdl:6' bound to instance 'processing_system7_0' of component 'system_processing_system7_0_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:4713]
+INFO: [Synth 8-638] synthesizing module 'system_processing_system7_0_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_processing_system7_0_0_stub.vhdl:178]
 INFO: [Synth 8-638] synthesizing module 'system_ps7_0_axi_periph_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:1946]
 INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_1H7AUOX' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:56]
 INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_1H7AUOX' (0#1) [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:56]
@@ -104,24 +105,24 @@ INFO: [Synth 8-256] done synthesizing module 'm05_couplers_imp_1IWS6WN' (0#1) [z
 INFO: [Synth 8-638] synthesizing module 'm06_couplers_imp_1TJ5H51' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:689]
 INFO: [Synth 8-256] done synthesizing module 'm06_couplers_imp_1TJ5H51' (0#1) [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:689]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_11SE3QO' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:813]
-INFO: [Synth 8-3491] module 'system_auto_pc_2' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_auto_pc_2_stub.vhdl:6' bound to instance 'auto_pc' of component 'system_auto_pc_2' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:996]
-INFO: [Synth 8-638] synthesizing module 'system_auto_pc_2' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_auto_pc_2_stub.vhdl:71]
+INFO: [Synth 8-3491] module 'system_auto_pc_2' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_auto_pc_2_stub.vhdl:6' bound to instance 'auto_pc' of component 'system_auto_pc_2' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:996]
+INFO: [Synth 8-638] synthesizing module 'system_auto_pc_2' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_auto_pc_2_stub.vhdl:71]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_11SE3QO' (0#1) [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:813]
-INFO: [Synth 8-3491] module 'system_xbar_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_xbar_0_stub.vhdl:6' bound to instance 'xbar' of component 'system_xbar_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:2859]
-INFO: [Synth 8-638] synthesizing module 'system_xbar_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_xbar_0_stub.vhdl:52]
+INFO: [Synth 8-3491] module 'system_xbar_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_xbar_0_stub.vhdl:6' bound to instance 'xbar' of component 'system_xbar_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:2859]
+INFO: [Synth 8-638] synthesizing module 'system_xbar_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_xbar_0_stub.vhdl:52]
 INFO: [Synth 8-256] done synthesizing module 'system_ps7_0_axi_periph_0' (0#1) [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:1946]
-INFO: [Synth 8-3491] module 'system_rgb2dvi_0_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_rgb2dvi_0_0_stub.vhdl:6' bound to instance 'rgb2dvi_0' of component 'system_rgb2dvi_0_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:5065]
-INFO: [Synth 8-638] synthesizing module 'system_rgb2dvi_0_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_rgb2dvi_0_0_stub.vhdl:23]
-INFO: [Synth 8-3491] module 'system_rst_clk_wiz_0_50M_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_rst_clk_wiz_0_50M_0_stub.vhdl:6' bound to instance 'rst_clk_wiz_0_50M' of component 'system_rst_clk_wiz_0_50M_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:5079]
-INFO: [Synth 8-638] synthesizing module 'system_rst_clk_wiz_0_50M_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_rst_clk_wiz_0_50M_0_stub.vhdl:22]
-INFO: [Synth 8-3491] module 'system_rst_vid_clk_dyn_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_rst_vid_clk_dyn_0_stub.vhdl:6' bound to instance 'rst_vid_clk_dyn' of component 'system_rst_vid_clk_dyn_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:5092]
-INFO: [Synth 8-638] synthesizing module 'system_rst_vid_clk_dyn_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_rst_vid_clk_dyn_0_stub.vhdl:22]
-INFO: [Synth 8-3491] module 'system_v_axi4s_vid_out_0_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_v_axi4s_vid_out_0_0_stub.vhdl:6' bound to instance 'v_axi4s_vid_out_0' of component 'system_v_axi4s_vid_out_0_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:5105]
-INFO: [Synth 8-638] synthesizing module 'system_v_axi4s_vid_out_0_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_v_axi4s_vid_out_0_0_stub.vhdl:44]
-INFO: [Synth 8-3491] module 'system_video_dynclk_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_video_dynclk_0_stub.vhdl:6' bound to instance 'video_dynclk' of component 'system_video_dynclk_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:5140]
-INFO: [Synth 8-638] synthesizing module 'system_video_dynclk_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_video_dynclk_0_stub.vhdl:34]
-INFO: [Synth 8-3491] module 'system_vtg_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_vtg_0_stub.vhdl:6' bound to instance 'vtg' of component 'system_vtg_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:5165]
-INFO: [Synth 8-638] synthesizing module 'system_vtg_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-29848-DESKTOP-D2NNA1U/realtime/system_vtg_0_stub.vhdl:45]
+INFO: [Synth 8-3491] module 'system_rgb2dvi_0_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_rgb2dvi_0_0_stub.vhdl:6' bound to instance 'rgb2dvi_0' of component 'system_rgb2dvi_0_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:5065]
+INFO: [Synth 8-638] synthesizing module 'system_rgb2dvi_0_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_rgb2dvi_0_0_stub.vhdl:23]
+INFO: [Synth 8-3491] module 'system_rst_clk_wiz_0_50M_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_rst_clk_wiz_0_50M_0_stub.vhdl:6' bound to instance 'rst_clk_wiz_0_50M' of component 'system_rst_clk_wiz_0_50M_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:5079]
+INFO: [Synth 8-638] synthesizing module 'system_rst_clk_wiz_0_50M_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_rst_clk_wiz_0_50M_0_stub.vhdl:22]
+INFO: [Synth 8-3491] module 'system_rst_vid_clk_dyn_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_rst_vid_clk_dyn_0_stub.vhdl:6' bound to instance 'rst_vid_clk_dyn' of component 'system_rst_vid_clk_dyn_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:5092]
+INFO: [Synth 8-638] synthesizing module 'system_rst_vid_clk_dyn_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_rst_vid_clk_dyn_0_stub.vhdl:22]
+INFO: [Synth 8-3491] module 'system_v_axi4s_vid_out_0_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_v_axi4s_vid_out_0_0_stub.vhdl:6' bound to instance 'v_axi4s_vid_out_0' of component 'system_v_axi4s_vid_out_0_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:5105]
+INFO: [Synth 8-638] synthesizing module 'system_v_axi4s_vid_out_0_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_v_axi4s_vid_out_0_0_stub.vhdl:44]
+INFO: [Synth 8-3491] module 'system_video_dynclk_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_video_dynclk_0_stub.vhdl:6' bound to instance 'video_dynclk' of component 'system_video_dynclk_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:5140]
+INFO: [Synth 8-638] synthesizing module 'system_video_dynclk_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_video_dynclk_0_stub.vhdl:34]
+INFO: [Synth 8-3491] module 'system_vtg_0' declared at 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_vtg_0_stub.vhdl:6' bound to instance 'vtg' of component 'system_vtg_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:5165]
+INFO: [Synth 8-638] synthesizing module 'system_vtg_0' [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-20672-DESKTOP-D2NNA1U/realtime/system_vtg_0_stub.vhdl:45]
 INFO: [Synth 8-3491] module 'system_xlconcat_0_0' declared at 'z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/ip/system_xlconcat_0_0/synth/system_xlconcat_0_0.v:53' bound to instance 'xlconcat_0' of component 'system_xlconcat_0_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/synth/system.vhd:5201]
 INFO: [Synth 8-6157] synthesizing module 'system_xlconcat_0_0' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/ip/system_xlconcat_0_0/synth/system_xlconcat_0_0.v:53]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_4_xlconcat' [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
@@ -231,18 +232,18 @@ WARNING: [Synth 8-7129] Port In101[0] in module xlconcat_v2_1_4_xlconcat is eith
 WARNING: [Synth 8-7129] Port In102[0] in module xlconcat_v2_1_4_xlconcat is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2506.555 ; gain = 523.008
+Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 2506.160 ; gain = 522.809
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2524.461 ; gain = 540.914
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 2524.059 ; gain = 540.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2524.461 ; gain = 540.914
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 2524.059 ; gain = 540.707
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.086 . Memory (MB): peak = 2536.508 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.088 . Memory (MB): peak = 2536.090 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 11 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -285,10 +286,10 @@ Parsing XDC File [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_c
 Finished Parsing XDC File [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/ip/system_video_dynclk_0/system_video_dynclk_0/system_video_dynclk_0_in_context.xdc] for cell 'system_i/video_dynclk'
 Parsing XDC File [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/ip/system_vtg_0/system_vtg_0/system_vtg_0_in_context.xdc] for cell 'system_i/vtg'
 Finished Parsing XDC File [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/ip/system_vtg_0/system_vtg_0/system_vtg_0_in_context.xdc] for cell 'system_i/vtg'
-Parsing XDC File [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/ip/system_edge_detect_hw_0_0/system_edge_detect_hw_0_0/system_edge_detect_hw_0_0_in_context.xdc] for cell 'system_i/edge_detect_hw_0'
-Finished Parsing XDC File [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/ip/system_edge_detect_hw_0_0/system_edge_detect_hw_0_0/system_edge_detect_hw_0_0_in_context.xdc] for cell 'system_i/edge_detect_hw_0'
 Parsing XDC File [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/ip/system_PmodKYPD_0_0/system_PmodKYPD_0_0/system_PmodKYPD_0_0_in_context.xdc] for cell 'system_i/PmodKYPD_0'
 Finished Parsing XDC File [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/ip/system_PmodKYPD_0_0/system_PmodKYPD_0_0/system_PmodKYPD_0_0_in_context.xdc] for cell 'system_i/PmodKYPD_0'
+Parsing XDC File [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/ip/system_edge_detect_hw_1_0/system_edge_detect_hw_1_0/system_edge_detect_hw_1_0_in_context.xdc] for cell 'system_i/img_sharp_kern_0'
+Finished Parsing XDC File [z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.gen/sources_1/bd/system/ip/system_edge_detect_hw_1_0/system_edge_detect_hw_1_0/system_edge_detect_hw_1_0_in_context.xdc] for cell 'system_i/img_sharp_kern_0'
 Parsing XDC File [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.srcs/constrs_1/imports/constraints/ZyboZ7_A.xdc]
 Finished Parsing XDC File [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.srcs/constrs_1/imports/constraints/ZyboZ7_A.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.srcs/constrs_1/imports/constraints/ZyboZ7_A.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
@@ -306,25 +307,25 @@ Parsing XDC File [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_c
 Finished Parsing XDC File [Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2618.984 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2618.559 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 11 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 11 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 2618.984 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 2618.559 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'system_i/MIPI_CSI_2_RX_0' at clock pin 'video_aclk' is different from the actual clock period '6.667', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'system_i/MIPI_D_PHY_RX_0' at clock pin 'dphy_clk_hs_p' is different from the actual clock period '4.761', this can lead to different synthesis results.
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2618.984 ; gain = 635.438
+Finished Constraint Validation : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 2618.590 ; gain = 635.238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2618.984 ; gain = 635.438
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 2618.590 ; gain = 635.238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -652,13 +653,13 @@ Applied set_property KEEP_HIERARCHY = SOFT for system_i/ps7_0_axi_periph. (const
 Applied set_property KEEP_HIERARCHY = SOFT for system_i/v_axi4s_vid_out_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for system_i/video_dynclk. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for system_i/vtg. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for system_i/edge_detect_hw_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for system_i/PmodKYPD_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/img_sharp_kern_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2618.984 ; gain = 635.438
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 2618.590 ; gain = 635.238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2618.984 ; gain = 635.438
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 2618.590 ; gain = 635.238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -681,25 +682,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2618.984 ; gain = 635.438
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 2618.590 ; gain = 635.238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 2618.984 ; gain = 635.438
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 2618.590 ; gain = 635.238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 2618.984 ; gain = 635.438
+Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 2618.590 ; gain = 635.238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 2618.984 ; gain = 635.438
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 2618.590 ; gain = 635.238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -717,37 +718,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2618.984 ; gain = 635.438
+Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 2618.590 ; gain = 635.238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2618.984 ; gain = 635.438
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 2618.590 ; gain = 635.238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2618.984 ; gain = 635.438
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 2618.590 ; gain = 635.238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2618.984 ; gain = 635.438
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 2618.590 ; gain = 635.238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 2618.984 ; gain = 635.438
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 2618.590 ; gain = 635.238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 2618.984 ; gain = 635.438
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 2618.590 ; gain = 635.238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -769,7 +770,7 @@ Report BlackBoxes:
 |10    |system_PmodKYPD_0_0            |         1|
 |11    |system_axi_vdma_0_0            |         1|
 |12    |system_clk_wiz_0_0             |         1|
-|13    |system_edge_detect_hw_0_0      |         1|
+|13    |system_edge_detect_hw_1_0      |         1|
 |14    |system_processing_system7_0_0  |         1|
 |15    |system_rgb2dvi_0_0             |         1|
 |16    |system_rst_clk_wiz_0_50M_0     |         1|
@@ -794,7 +795,7 @@ Report Cell Usage:
 |9     |system_auto_pc_2_bbox               |     1|
 |10    |system_axi_vdma_0_0_bbox            |     1|
 |11    |system_clk_wiz_0_0_bbox             |     1|
-|12    |system_edge_detect_hw_0_0_bbox      |     1|
+|12    |system_edge_detect_hw_1_0_bbox      |     1|
 |13    |system_processing_system7_0_0_bbox  |     1|
 |14    |system_rgb2dvi_0_0_bbox             |     1|
 |15    |system_rst_clk_wiz_0_50M_0_bbox     |     1|
@@ -803,31 +804,31 @@ Report Cell Usage:
 |18    |system_video_dynclk_0_bbox          |     1|
 |19    |system_vtg_0_bbox                   |     1|
 |20    |system_xbar_0_bbox                  |     1|
-|21    |IBUF                                |     2|
+|21    |IBUF                                |     1|
 |22    |IOBUF                               |    11|
 +------+------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 2618.984 ; gain = 635.438
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 2618.590 ; gain = 635.238
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 23 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:33 . Memory (MB): peak = 2618.984 ; gain = 540.914
-Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 2618.984 ; gain = 635.438
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:40 . Memory (MB): peak = 2618.590 ; gain = 540.707
+Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 2618.590 ; gain = 635.238
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.061 . Memory (MB): peak = 2618.984 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.061 . Memory (MB): peak = 2618.590 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 11 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2618.984 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2618.590 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 11 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 11 instances
 
-Synth Design complete | Checksum: 4dea509a
+Synth Design complete | Checksum: 615ca689
 INFO: [Common 17-83] Releasing license: Synthesis
-119 Infos, 110 Warnings, 0 Critical Warnings and 0 Errors encountered.
+120 Infos, 110 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 2618.984 ; gain = 1022.703
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:00:50 . Memory (MB): peak = 2618.590 ; gain = 1023.535
 INFO: [Common 17-1381] The checkpoint 'Z:/EE_277_proj/EE277-Final-Project/final_proj/lab_camera/lab_camera/camera/camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.runs/synth_1/system_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file system_wrapper_utilization_synth.rpt -pb system_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Nov 29 18:58:49 2025...
+INFO: [Common 17-206] Exiting Vivado at Wed Dec  3 21:20:00 2025...

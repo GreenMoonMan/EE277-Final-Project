@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x3FBF6E35EB3B6C5A",
+      "boundary_crc": "0x8B5323181BE1AB6F",
       "device": "xc7z010clg400-1",
       "gen_directory": "../../../../hw.gen/sources_1/bd/system",
       "name": "system",
@@ -49,8 +49,8 @@
       "v_axi4s_vid_out_0": "",
       "video_dynclk": "",
       "vtg": "",
-      "edge_detect_hw_0": "",
-      "PmodKYPD_0": ""
+      "PmodKYPD_0": "",
+      "img_sharp_kern_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -460,9 +460,7 @@
         "right": "0"
       },
       "sw": {
-        "direction": "I",
-        "left": "1",
-        "right": "0"
+        "direction": "I"
       }
     },
     "components": {
@@ -3218,12 +3216,6 @@
           }
         }
       },
-      "edge_detect_hw_0": {
-        "vlnv": "xilinx.com:user:edge_detect_hw:1.0",
-        "xci_name": "system_edge_detect_hw_0_0",
-        "xci_path": "ip\\system_edge_detect_hw_0_0\\system_edge_detect_hw_0_0.xci",
-        "inst_hier_path": "edge_detect_hw_0"
-      },
       "PmodKYPD_0": {
         "vlnv": "digilentinc.com:IP:PmodKYPD:1.0",
         "xci_name": "system_PmodKYPD_0_0",
@@ -3236,6 +3228,12 @@
             "memory_map_ref": "AXI_LITE_GPIO"
           }
         }
+      },
+      "img_sharp_kern_0": {
+        "vlnv": "Arm.com:user:edge_detect_hw:1.0",
+        "xci_name": "system_edge_detect_hw_1_0",
+        "xci_path": "ip\\system_edge_detect_hw_1_0\\system_edge_detect_hw_1_0.xci",
+        "inst_hier_path": "img_sharp_kern_0"
       }
     },
     "interface_nets": {
@@ -3247,8 +3245,8 @@
       },
       "AXI_GammaCorrection_1_m_axis_video": {
         "interface_ports": [
-          "AXI_GammaCorrection_1/m_axis_video",
-          "edge_detect_hw_0/s_axis"
+          "img_sharp_kern_0/s_axis",
+          "AXI_GammaCorrection_1/m_axis_video"
         ]
       },
       "MIPI_CSI_2_RX_0_m_axis_video": {
@@ -3305,10 +3303,10 @@
           "MIPI_D_PHY_RX_0/dphy_hs_clock"
         ]
       },
-      "edge_detect_hw_0_m_axis": {
+      "edge_detect_hw_1_m_axis": {
         "interface_ports": [
-          "axi_vdma_0/S_AXIS_S2MM",
-          "edge_detect_hw_0/m_axis"
+          "img_sharp_kern_0/m_axis",
+          "axi_vdma_0/S_AXIS_S2MM"
         ]
       },
       "processing_system7_0_DDR": {
@@ -3487,7 +3485,7 @@
       "hwsw_sel_0_1": {
         "ports": [
           "sw",
-          "edge_detect_hw_0/hwsw_sel"
+          "img_sharp_kern_0/hwsw_sel"
         ]
       },
       "mm_clk_150": {
@@ -3509,7 +3507,7 @@
           "axi_vdma_0/m_axi_s2mm_aclk",
           "axi_vdma_0/s_axis_s2mm_aclk",
           "v_axi4s_vid_out_0/aclk",
-          "edge_detect_hw_0/clk"
+          "img_sharp_kern_0/clk"
         ]
       },
       "processing_system7_0_FCLK_CLK0": {
@@ -3563,9 +3561,9 @@
           "v_axi4s_vid_out_0/aresetn",
           "video_dynclk/s_axi_aresetn",
           "vtg/s_axi_aresetn",
-          "edge_detect_hw_0/rst_n",
           "ps7_0_axi_periph/M06_ARESETN",
-          "PmodKYPD_0/s_axi_aresetn"
+          "PmodKYPD_0/s_axi_aresetn",
+          "img_sharp_kern_0/rst_n"
         ]
       },
       "rst_clk_wiz_0_50M_peripheral_reset": {

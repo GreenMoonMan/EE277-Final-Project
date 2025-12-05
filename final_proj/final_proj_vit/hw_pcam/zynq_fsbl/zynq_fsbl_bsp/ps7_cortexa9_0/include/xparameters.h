@@ -53,6 +53,17 @@
 
 /******************************************************************/
 
+/* Definitions for driver PMODKYPD */
+#define XPAR_PMODKYPD_NUM_INSTANCES 1
+
+/* Definitions for peripheral PMODKYPD_0 */
+#define XPAR_PMODKYPD_0_DEVICE_ID 0
+#define XPAR_PMODKYPD_0_AXI_LITE_GPIO_BASEADDR 0x40000000
+#define XPAR_PMODKYPD_0_AXI_LITE_GPIO_HIGHADDR 0x40000FFF
+
+
+/******************************************************************/
+
 /* Definitions for driver AXIVDMA */
 #define XPAR_XAXIVDMA_NUM_INSTANCES 1U
 

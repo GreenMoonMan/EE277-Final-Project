@@ -2,7 +2,7 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
---Date        : Sat Nov 29 18:48:53 2025
+--Date        : Wed Dec  3 21:16:09 2025
 --Host        : DESKTOP-D2NNA1U running 64-bit major release  (build 9200)
 --Command     : generate_target system_wrapper.bd
 --Design      : system_wrapper
@@ -58,7 +58,7 @@ entity system_wrapper is
     hdmi_tx_clk_p : out STD_LOGIC;
     hdmi_tx_data_n : out STD_LOGIC_VECTOR ( 2 downto 0 );
     hdmi_tx_data_p : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    sw : in STD_LOGIC_VECTOR ( 1 downto 0 )
+    sw : in STD_LOGIC
   );
 end system_wrapper;
 
@@ -131,7 +131,7 @@ architecture STRUCTURE of system_wrapper is
     dphy_data_hs_p : in STD_LOGIC_VECTOR ( 1 downto 0 );
     dphy_data_lp_n : in STD_LOGIC_VECTOR ( 1 downto 0 );
     dphy_data_lp_p : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    sw : in STD_LOGIC_VECTOR ( 1 downto 0 )
+    sw : in STD_LOGIC
   );
   end component system;
   component IOBUF is
@@ -322,6 +322,6 @@ system_i: component system
       hdmi_tx_clk_p => hdmi_tx_clk_p,
       hdmi_tx_data_n(2 downto 0) => hdmi_tx_data_n(2 downto 0),
       hdmi_tx_data_p(2 downto 0) => hdmi_tx_data_p(2 downto 0),
-      sw(1 downto 0) => sw(1 downto 0)
+      sw => sw
     );
 end STRUCTURE;
