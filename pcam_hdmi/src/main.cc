@@ -64,32 +64,44 @@ int main()
 	// keypad initialization
 	KeyEntry ke(&kypd, acceptFunc, denyFunc);
 
-	xil_printf("\r\n===== MAIN MENU =====\r\n");
-	xil_printf("  1) Camera Mode\r\n");
-	xil_printf("  2) Display Mode \r\n");
-	xil_printf("  x) Exit\r\n> ");
-
+	bool fromSubmenu = true;
 
 	// -------------------- Main Menu Loop --------------------
 	while (1)
 	{
-//		// non blocking uart read
-//		char c = 0;
-//		// Check if data is available (non-blocking)
-//		if (XUartPs_IsReceiveData(STDIN_BASEADDRESS)) {
-//		    c = XUartPs_RecvByte(STDIN_BASEADDRESS);
-//		}
-//
-//		if (c == 'x')
-//			break;
-//		else if (c == '1')
-//			run_camera_mode(vdma_driver, cam, vid);
-//		else if (c == '2')
-//		{
-//			view_snapshot_mode(vdma_driver, cam, vid);
-//		}
-//		else if(c != 0)
-//			xil_printf("Invalid selection.\r\n");
+		if(fromSubmenu)
+		{
+			xil_printf("\r\n===== MAIN MENU =====\r\n");
+			xil_printf("  1) Camera Mode\r\n");
+			xil_printf("  2) Display Mode \r\n");
+			xil_printf("  x) Exit\r\n> ");
+			fromSubmenu = false;
+		}
+
+		// non blocking uart read
+		char c = 0;
+		// Check if data is available (non-blocking)
+		if (XUartPs_IsReceiveData(STDIN_BASEADDRESS)) {
+		    c = XUartPs_RecvByte(STDIN_BASEADDRESS);
+		}
+
+		if (c == 'x')
+			break;
+		else if (c == '1')
+		{
+			run_camera_mode(vdma_driver, cam, vid);
+			fromSubmenu = true;
+		}
+		else if (c == '2')
+		{
+			view_snapshot_mode(vdma_driver, cam, vid);
+			fromSubmenu = true;
+		}
+		else if(c != 0)
+		{
+			xil_printf("\r\nInvalid selection.\r\n");
+			fromSubmenu = true;
+		}
 
 		// run keypad code
 		ke.poll();
@@ -599,7 +611,7 @@ void create_snapshot(
 			}
 
 			// overlay number
-			overlay_number_on_slot(fifoA[indexA], width, height, stride, overlayText, bottom_margin, whiteBGR);
+//			overlay_number_on_slot(fifoA[indexA], width, height, stride, overlayText, bottom_margin, whiteBGR);
 
 			Xil_DCacheFlushRange((INTPTR)fifoA[indexA], bytes);
 			xil_printf("Stored at 0x%08X\r\n", (u32)fifoA[indexA]);
